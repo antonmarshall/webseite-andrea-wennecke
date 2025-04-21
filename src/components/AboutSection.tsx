@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Hand } from 'lucide-react';
 
@@ -58,7 +57,7 @@ const AboutSection = () => {
           <div className="flex-1 flex justify-center items-center">
             <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/35104afe-c4aa-4b1f-8771-6f5aae3f5ad2.png" 
+                src="/images/profilbild.png" 
                 alt="Andrea Wennecke"
                 className="w-full h-full object-cover"
               />
