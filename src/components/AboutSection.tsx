@@ -13,13 +13,13 @@ const AboutCard = ({
 }) => {
   return (
     <div 
-      className="glass-card p-8 transition-all duration-300 hover:bg-therapy-orange/5 hover:scale-[1.01] cursor-pointer group" 
+      className="glass-card p-8 transition-all duration-300 hover:bg-therapy-orange/10 hover:scale-[1.02] cursor-pointer group" 
       style={{ animationDelay: `${0.1 * delayIndex}s` }}
     >
-      <h3 className="text-xl font-semibold mb-4 text-therapy-blue group-hover:text-therapy-blue/90 transition-colors">
+      <h3 className="text-xl font-semibold mb-4 text-therapy-blue group-hover:text-therapy-blue/70 transition-colors">
         {title}
       </h3>
-      <p className="text-gray-700 group-hover:text-gray-800 transition-colors">{content}</p>
+      <p className="text-gray-700 group-hover:text-gray-900 transition-colors">{content}</p>
     </div>
   );
 };
