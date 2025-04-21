@@ -1,45 +1,37 @@
-import { Link as RouterLink } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import { getPath } from "@/lib/utils";
+import * as React from "react"
+import { Link as RouterLink } from "react-router-dom"
+import { cn } from "@/lib/utils"
 
-interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-  isExternal?: boolean;
-}
-
-export const Link = ({ href, children, className, isExternal, ...props }: LinkProps) => {
-  // Check if the link is external (starts with http:// or https://) or is a mailto: or tel: link
-  const isExternalLink = isExternal || 
-    href.startsWith('http://') || 
-    href.startsWith('https://') ||
-    href.startsWith('mailto:') ||
-    href.startsWith('tel:');
-
-  if (isExternalLink) {
+const Link = React.forwardRef<
+  HTMLAnchorElement,
+  React.AnchorHTMLAttributes<HTMLAnchorElement>
+>(({ className, children, href, ...props }, ref) => {
+  // If it starts with #, use regular anchor tag
+  if (href?.startsWith('#')) {
     return (
       <a
+        ref={ref}
         href={href}
-        className={cn("hover:underline", className)}
-        target="_blank"
-        rel="noopener noreferrer"
+        className={cn("no-underline", className)}
         {...props}
       >
         {children}
       </a>
-    );
+    )
   }
 
-  // For internal links, use React Router's Link with the correct base path
-  const internalPath = href.startsWith('#') ? href : href.replace(/^\//, '');
+  // Otherwise use RouterLink
   return (
     <RouterLink
-      to={internalPath}
-      className={cn("hover:underline", className)}
+      ref={ref}
+      to={href || '/'}
+      className={cn("no-underline", className)}
       {...props}
     >
       {children}
     </RouterLink>
-  );
-}; 
+  )
+})
+Link.displayName = "Link"
+
+export { Link } 
