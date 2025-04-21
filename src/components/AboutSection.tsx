@@ -55,11 +55,11 @@ const AboutSection = () => {
             ))}
           </div>
           <div className="flex-1 flex justify-center items-center">
-            <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-lg">
+            <div className="w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src="/webseite-andrea-wennecke/images/profilbild.png" 
                 alt="Andrea Wennecke"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
