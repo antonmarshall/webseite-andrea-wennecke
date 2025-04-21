@@ -20,8 +20,8 @@ const PriceCard = ({ icon, title, price, index }: PriceCardProps) => {
           {icon}
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-4 text-therapy-blue hover:text-therapy-blue/70 transition-colors">{title}</h3>
-      <p className="text-2xl font-bold mb-6 text-gray-800 hover:text-gray-900 transition-colors">{price}</p>
+      <h3 className="text-xl font-semibold mb-4 text-therapy-blue">{title}</h3>
+      <p className="text-2xl font-bold mb-6 text-gray-800">{price}</p>
       <Button className="w-full bg-therapy-blue hover:bg-therapy-blue/80 transition-colors">
         Termin vereinbaren
       </Button>

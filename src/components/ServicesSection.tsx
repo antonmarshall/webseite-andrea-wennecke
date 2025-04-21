@@ -75,14 +75,13 @@ const ServicesSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              colorClass={service.colorClass}
-              index={index}
-            />
+            <div className="glass-card p-8 cursor-pointer">
+              <div className="service-card-icon text-therapy-blue">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-therapy-blue">{service.title}</h3>
+              <p className="text-gray-700">{service.description}</p>
+            </div>
           ))}
         </div>
       </div>
