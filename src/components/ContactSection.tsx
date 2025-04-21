@@ -2,6 +2,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { CalendlyDialog } from '@/components/CalendlyDialog';
 
 const ContactSection = () => {
   return (
@@ -53,6 +54,16 @@ const ContactSection = () => {
                   <p className="font-medium">Öffnungszeiten</p>
                   <p className="text-gray-600">Montag - Freitag: 9:00 - 18:00 Uhr</p>
                 </div>
+              </div>
+
+              <div className="pt-4">
+                <CalendlyDialog>
+                  <Button 
+                    className="w-full bg-therapy-blue hover:bg-therapy-blue/90 text-white transition-colors"
+                  >
+                    Termin vereinbaren
+                  </Button>
+                </CalendlyDialog>
               </div>
             </div>
           </div>

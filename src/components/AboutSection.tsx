@@ -13,7 +13,7 @@ const AboutCard = ({
 }) => {
   return (
     <div 
-      className="glass-card p-8 transition-all duration-300 hover:bg-therapy-orange/20 hover:scale-[1.02] cursor-pointer group" 
+      className="glass-card p-8 transition-all duration-300 hover:bg-therapy-orange/20 hover:scale-[1.01] cursor-pointer group" 
       style={{ animationDelay: `${0.1 * delayIndex}s` }}
     >
       <h3 className="text-xl font-semibold mb-4 text-therapy-blue group-hover:text-therapy-blue/80 transition-colors">
