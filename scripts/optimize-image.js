@@ -10,12 +10,12 @@ const inputPath = join(__dirname, '../public/images/profilbild.png');
 const outputPath = join(__dirname, '../public/images/profilbild.png');
 
 sharp(inputPath)
-  .resize(800, 800, {
+  .resize(400, 400, {
     fit: 'inside',
     withoutEnlargement: true
   })
   .jpeg({
-    quality: 80,
+    quality: 75,
     progressive: true
   })
   .toFile(outputPath + '.temp')
