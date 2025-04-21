@@ -1,6 +1,7 @@
 import React from 'react';
 import { User, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { CalendlyDialog } from '@/components/CalendlyDialog';
 
 interface PriceCardProps {
   icon: React.ReactNode;
@@ -12,7 +13,7 @@ interface PriceCardProps {
 const PriceCard = ({ icon, title, price, index }: PriceCardProps) => {
   return (
     <div 
-      className="bg-white rounded-xl shadow-md p-8 text-center transition-all duration-300 hover:scale-[1.02] hover:bg-therapy-orange/10 hover:shadow-lg animate-fade-in cursor-pointer"
+      className="bg-white rounded-xl shadow-md p-8 text-center transition-all duration-300 hover:scale-[1.02] hover:bg-therapy-blue/5 hover:shadow-lg animate-fade-in cursor-pointer"
       style={{ animationDelay: `${0.1 * index}s` }}
     >
       <div className="flex justify-center mb-4">
@@ -22,9 +23,11 @@ const PriceCard = ({ icon, title, price, index }: PriceCardProps) => {
       </div>
       <h3 className="text-xl font-semibold mb-4 text-therapy-blue">{title}</h3>
       <p className="text-2xl font-bold mb-6 text-gray-800">{price}</p>
-      <Button className="w-full bg-therapy-blue hover:bg-therapy-blue/80 transition-colors">
-        Termin vereinbaren
-      </Button>
+      <CalendlyDialog>
+        <div className="w-full">
+          Termin vereinbaren
+        </div>
+      </CalendlyDialog>
     </div>
   );
 };
