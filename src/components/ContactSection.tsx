@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,10 +15,10 @@ const ContactSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-white p-8 rounded-xl shadow-md">
+          <div className="bg-white p-8 rounded-xl shadow-md flex flex-col min-h-[500px]">
             <h3 className="text-xl font-semibold mb-6 text-therapy-blue">Kontaktinformationen</h3>
             
-            <div className="space-y-6">
+            <div className="space-y-6 flex-grow">
               <div className="flex items-start">
                 <MapPin className="h-6 w-6 text-therapy-blue mr-4 mt-1" />
                 <div>
@@ -55,22 +54,22 @@ const ContactSection = () => {
                   <p className="text-gray-600">Montag - Freitag: 9:00 - 18:00 Uhr</p>
                 </div>
               </div>
+            </div>
 
-              <div className="pt-4">
-                <CalendlyDialog>
-                  <Button 
-                    className="w-full bg-therapy-blue hover:bg-therapy-blue/90 text-white transition-colors"
-                  >
-                    Termin vereinbaren
-                  </Button>
-                </CalendlyDialog>
-              </div>
+            <div className="mt-8">
+              <CalendlyDialog>
+                <Button 
+                  className="w-full bg-therapy-blue hover:bg-therapy-blue/90 text-white transition-colors"
+                >
+                  Termin vereinbaren
+                </Button>
+              </CalendlyDialog>
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-md">
+          <div className="bg-white p-8 rounded-xl shadow-md flex flex-col min-h-[500px]">
             <h3 className="text-xl font-semibold mb-6 text-therapy-blue">Schreiben Sie mir</h3>
-            <form className="space-y-4">
+            <form className="space-y-4 flex-grow">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
@@ -91,6 +90,7 @@ const ContactSection = () => {
                   />
                 </div>
               </div>
+              
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Betreff</label>
                 <input
@@ -109,10 +109,12 @@ const ContactSection = () => {
                   placeholder="Ihre Nachricht"
                 ></textarea>
               </div>
+            </form>
+            <div className="mt-8">
               <Button className="w-full bg-therapy-blue hover:bg-therapy-blue/90">
                 Nachricht senden
               </Button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
