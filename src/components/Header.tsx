@@ -50,7 +50,7 @@ const Header = () => {
             {['about', 'services', 'prices', 'faq', 'contact'].map((section) => (
               <a 
                 key={section}
-                href={`#${section}`}
+                href={`/webseite-andrea-wennecke/#${section}`}
                 className={`transition-all duration-300 px-3 py-1 rounded-md hover:text-therapy-lightBlue
                   ${isActive(section) ? 'bg-white/10 text-therapy-lightBlue' : ''}`}
               >
@@ -96,35 +96,35 @@ const Header = () => {
                 Home
               </Link>
               <a 
-                href="#about" 
+                href="/webseite-andrea-wennecke/#about" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 Über mich
               </a>
               <a 
-                href="#services" 
+                href="/webseite-andrea-wennecke/#services" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 Therapieangebote
               </a>
               <a 
-                href="#prices" 
+                href="/webseite-andrea-wennecke/#prices" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 Preise
               </a>
               <a 
-                href="#faq" 
+                href="/webseite-andrea-wennecke/#faq" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 FAQ
               </a>
               <a 
-                href="#contact" 
+                href="/webseite-andrea-wennecke/#contact" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -21,9 +20,9 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="text-white/80 hover:text-white transition-colors">Home</Link></li>
-              <li><a href="#about" className="text-white/80 hover:text-white transition-colors">Über mich</a></li>
-              <li><a href="#services" className="text-white/80 hover:text-white transition-colors">Therapieangebote</a></li>
-              <li><a href="#contact" className="text-white/80 hover:text-white transition-colors">Kontakt</a></li>
+              <li><a href="/webseite-andrea-wennecke/#about" className="text-white/80 hover:text-white transition-colors">Über mich</a></li>
+              <li><a href="/webseite-andrea-wennecke/#services" className="text-white/80 hover:text-white transition-colors">Therapieangebote</a></li>
+              <li><a href="/webseite-andrea-wennecke/#contact" className="text-white/80 hover:text-white transition-colors">Kontakt</a></li>
             </ul>
           </div>
 
