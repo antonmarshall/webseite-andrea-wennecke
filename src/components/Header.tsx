@@ -1,54 +1,32 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const location = useLocation();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section[id]');
-      let currentSection = 'home';
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          currentSection = section.id;
-        }
-      });
-
-      setActiveSection(currentSection);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const isActive = (section: string) => activeSection === section ? 'text-therapy-orange font-bold' : '';
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <header className="sticky top-0 bg-therapy-blue/95 backdrop-blur-sm text-white z-50 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-lg md:text-xl font-bold flex items-center gap-2">
-            <img src="/logo.svg" alt="Logo" className="h-8 w-8" />
-            <span>Andrea Wennecke<br />
-            <span className="text-sm font-normal">Kreativtherapie</span></span>
-          </Link>
+          <div className="text-lg md:text-xl font-bold">
+            <Link to="/" className="flex items-center">Andrea Wennecke</Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
-            <Link to="/" className={`hover:text-therapy-lightBlue transition-colors duration-300 ${isActive('home')}`}>Home</Link>
-            <a href="#about" className={`hover:text-therapy-lightBlue transition-colors duration-300 ${isActive('about')}`}>Über mich</a>
-            <a href="#services" className={`hover:text-therapy-lightBlue transition-colors duration-300 ${isActive('services')}`}>Therapieangebote</a>
-            <a href="#prices" className={`hover:text-therapy-lightBlue transition-colors duration-300 ${isActive('prices')}`}>Preise</a>
-            <a href="#contact" className={`hover:text-therapy-lightBlue transition-colors duration-300 ${isActive('contact')}`}>Kontakt</a>
-            <a href="#faq" className={`hover:text-therapy-lightBlue transition-colors duration-300 ${isActive('faq')}`}>FAQ</a>
+            <Link to="/" className="hover:text-therapy-lightBlue transition-colors duration-300">Home</Link>
+            <a href="#about" className="hover:text-therapy-lightBlue transition-colors duration-300">Über mich</a>
+            <a href="#services" className="hover:text-therapy-lightBlue transition-colors duration-300">Therapieangebote</a>
+            <a href="#prices" className="hover:text-therapy-lightBlue transition-colors duration-300">Preise</a>
+            <a href="#faq" className="hover:text-therapy-lightBlue transition-colors duration-300">FAQ</a>
+            <a href="#contact" className="hover:text-therapy-lightBlue transition-colors duration-300">Kontakt</a>
           </nav>
 
           {/* Mobile Menu Button */}
