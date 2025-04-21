@@ -56,7 +56,7 @@ const AboutSection = () => {
             ))}
           </div>
           <div className="flex-1 flex justify-center items-center">
-            <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-lg transition-transform hover:scale-[1.02]">
+            <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src="/lovable-uploads/35104afe-c4aa-4b1f-8771-6f5aae3f5ad2.png" 
                 alt="Andrea Wennecke"
