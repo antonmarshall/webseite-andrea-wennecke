@@ -12,17 +12,17 @@ interface PriceCardProps {
 const PriceCard = ({ icon, title, price, index }: PriceCardProps) => {
   return (
     <div 
-      className="bg-white rounded-xl shadow-md p-8 text-center transition-all duration-300 hover:scale-[1.02] hover:bg-gradient-to-br hover:from-white hover:to-therapy-orange/20 hover:shadow-lg animate-fade-in cursor-pointer group"
+      className="bg-white rounded-xl shadow-md p-8 text-center transition-all duration-300 hover:scale-[1.02] hover:bg-therapy-orange/10 hover:shadow-lg animate-fade-in cursor-pointer"
       style={{ animationDelay: `${0.1 * index}s` }}
     >
       <div className="flex justify-center mb-4">
-        <div className="h-16 w-16 bg-therapy-blue/10 rounded-full flex items-center justify-center text-therapy-blue group-hover:bg-therapy-orange/20 group-hover:text-therapy-orange transition-all duration-300 group-hover:scale-110">
+        <div className="h-16 w-16 bg-therapy-blue/10 rounded-full flex items-center justify-center text-therapy-blue hover:bg-therapy-orange/20 transition-colors">
           {icon}
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-4 text-therapy-blue group-hover:text-therapy-orange transition-colors duration-300">{title}</h3>
+      <h3 className="text-xl font-semibold mb-4 text-therapy-blue">{title}</h3>
       <p className="text-2xl font-bold mb-6 text-gray-800">{price}</p>
-      <Button className="w-full bg-therapy-blue hover:bg-therapy-orange transition-colors">
+      <Button className="w-full bg-therapy-blue hover:bg-therapy-blue/80 transition-colors">
         Termin vereinbaren
       </Button>
     </div>

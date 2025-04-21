@@ -12,10 +12,10 @@ const AboutCard = ({
 }) => {
   return (
     <div 
-      className="glass-card p-8 transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-therapy-orange/20 hover:scale-[1.02] cursor-pointer group" 
+      className="glass-card p-8 transition-all duration-300 hover:bg-therapy-orange/10 hover:scale-[1.02] cursor-pointer" 
       style={{ animationDelay: `${0.1 * delayIndex}s` }}
     >
-      <h3 className="text-xl font-semibold mb-4 text-therapy-blue group-hover:text-therapy-orange transition-colors duration-300">
+      <h3 className="text-xl font-semibold mb-4 text-therapy-blue">
         {title}
       </h3>
       <p className="text-gray-700">{content}</p>

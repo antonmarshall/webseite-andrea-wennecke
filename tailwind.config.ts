@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -53,16 +54,14 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				therapy: {
-					blue: '#2563EB',
+					blue: '#0C4A6E',
 					lightBlue: '#60A5FA',
-					purple: '#A855F7',
-					pink: '#EC4899',
-					red: '#EF4444',
-					green: '#10B981',
-					turquoise: '#06B6D4',
-					orange: '#FB923C',
-					yellow: '#FBBF24',
-					lavender: '#C084FC',
+					purple: '#C084FC',
+					pink: '#F472B6',
+					red: '#FB7185',
+					green: '#34D399',
+					turquoise: '#2DD4BF',
+					orange: '#FDF1E6'
 				}
 			},
 			borderRadius: {

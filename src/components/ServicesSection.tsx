@@ -12,13 +12,13 @@ interface ServiceCardProps {
 const ServiceCard = ({ icon, title, description, colorClass, index }: ServiceCardProps) => {
   return (
     <div 
-      className={`service-card border-t-4 ${colorClass} transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-therapy-orange/20 hover:scale-[1.03] cursor-pointer group bg-white`}
+      className={`service-card border-t-4 ${colorClass} transition-all duration-300 hover:bg-therapy-orange/10 hover:scale-[1.03] cursor-pointer group bg-white`}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="service-card-icon group-hover:scale-110 group-hover:text-therapy-orange transition-all duration-300">
+      <div className="service-card-icon">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-therapy-blue group-hover:text-therapy-orange transition-colors duration-300">{title}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-therapy-blue">{title}</h3>
       <p className="text-gray-700">{description}</p>
     </div>
   );
@@ -30,13 +30,13 @@ const ServicesSection = () => {
       icon: <Palette className="h-12 w-12" />,
       title: "Kunsttherapie",
       description: "Durch freies Malen, Formen und kreative Materialien Zugang zu Emotionen finden.",
-      colorClass: "border-therapy-purple",
+      colorClass: "border-therapy-lightBlue",
     },
     {
       icon: <Brain className="h-12 w-12" />,
       title: "Körperorientierte Psychotherapie",
       description: "Verbindung von Körper und Psyche zur ganzheitlichen Wohlbefinden.",
-      colorClass: "border-therapy-turquoise",
+      colorClass: "border-therapy-purple",
     },
     {
       icon: <Music className="h-12 w-12" />,
@@ -48,7 +48,7 @@ const ServicesSection = () => {
       icon: <Heart className="h-12 w-12" />,
       title: "Traumatherapie",
       description: "Behutsame Bearbeitung traumatischer Erfahrungen durch kreative und körperorientierte Methoden.",
-      colorClass: "border-therapy-lavender",
+      colorClass: "border-therapy-red",
     },
     {
       icon: <User className="h-12 w-12" />,
@@ -60,7 +60,7 @@ const ServicesSection = () => {
       icon: <Users className="h-12 w-12" />,
       title: "Gruppentherapie",
       description: "In kleinen Gruppen verschiedene Formen und gemeinsam kreative Lösungswege erarbeiten.",
-      colorClass: "border-therapy-yellow",
+      colorClass: "border-therapy-turquoise",
     },
   ];
 
