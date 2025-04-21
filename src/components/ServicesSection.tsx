@@ -12,10 +12,10 @@ interface ServiceCardProps {
 const ServiceCard = ({ icon, title, description, colorClass, index }: ServiceCardProps) => {
   return (
     <div 
-      className={`service-card border-t-4 ${colorClass} transition-all duration-300 hover:bg-therapy-orange/10 hover:scale-[1.03] cursor-pointer group bg-white`}
+      className={`service-card border-t-4 ${colorClass} p-6 rounded-xl shadow-sm transition-all duration-300 hover:bg-gradient-to-br from-white to-therapy-blue/5 hover:shadow-md cursor-pointer group bg-white`}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="service-card-icon">
+      <div className="service-card-icon text-therapy-blue mb-4">
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-2 text-therapy-blue">{title}</h3>
@@ -30,37 +30,37 @@ const ServicesSection = () => {
       icon: <Palette className="h-12 w-12" />,
       title: "Kunsttherapie",
       description: "Durch freies Malen, Formen und kreative Materialien Zugang zu Emotionen finden.",
-      colorClass: "border-therapy-lightBlue",
+      colorClass: "border-therapy-blue/60",
     },
     {
       icon: <Brain className="h-12 w-12" />,
       title: "Körperorientierte Psychotherapie",
       description: "Verbindung von Körper und Psyche zur ganzheitlichen Wohlbefinden.",
-      colorClass: "border-therapy-purple",
+      colorClass: "border-therapy-blue/70",
     },
     {
       icon: <Music className="h-12 w-12" />,
       title: "Ausdruckstherapie",
       description: "Verschiedene kreative Ausdrucksformen nutzen, um Emotionen zu verarbeiten und neue Perspektiven zu gewinnen.",
-      colorClass: "border-therapy-pink",
+      colorClass: "border-therapy-blue/80",
     },
     {
       icon: <Heart className="h-12 w-12" />,
       title: "Traumatherapie",
       description: "Behutsame Bearbeitung traumatischer Erfahrungen durch kreative und körperorientierte Methoden.",
-      colorClass: "border-therapy-red",
+      colorClass: "border-therapy-blue/90",
     },
     {
       icon: <User className="h-12 w-12" />,
       title: "Einzeltherapie",
       description: "Individuell zugeschnittene Begleitung für persönliche Veränderungswünsche und Entwicklungsziele.",
-      colorClass: "border-therapy-green",
+      colorClass: "border-therapy-blue",
     },
     {
       icon: <Users className="h-12 w-12" />,
       title: "Gruppentherapie",
       description: "In kleinen Gruppen verschiedene Formen und gemeinsam kreative Lösungswege erarbeiten.",
-      colorClass: "border-therapy-turquoise",
+      colorClass: "border-therapy-blue",
     },
   ];
 
