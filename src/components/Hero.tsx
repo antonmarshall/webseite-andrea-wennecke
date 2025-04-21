@@ -20,7 +20,7 @@ const Hero = () => {
           </h2>
           
           <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-lg animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
-            Traumaverarbeitung für Erwachsene und Jugendliche in einem geschützten, heilsamen Raum.
+            Traumaverarbeitung für Erwachsene und Jugendliche in einem geschützten Raum.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
