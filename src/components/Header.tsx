@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -42,13 +41,8 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="text-lg md:text-xl font-bold">
-            <Link to="/" className="flex items-center gap-3 transition-colors duration-300 hover:text-therapy-lightBlue">
-              <img 
-                src="/lovable-uploads/f4b48d54-c85b-4c62-b652-2efd7743b03f.png" 
-                alt="Bunte Stühle Logo" 
-                className="h-8 w-auto"
-              />
-              <span>Andrea Wennecke</span>
+            <Link to="/" className="flex items-center transition-colors duration-300 hover:text-therapy-lightBlue">
+              Andrea Wennecke
             </Link>
           </div>
 
@@ -83,14 +77,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden fixed inset-0 bg-therapy-blue z-50 flex flex-col animate-fade-in">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center border-b border-white/20">
-              <div className="flex items-center gap-3">
-                <img 
-                  src="/lovable-uploads/f4b48d54-c85b-4c62-b652-2efd7743b03f.png" 
-                  alt="Bunte Stühle Logo" 
-                  className="h-8 w-auto"
-                />
-                <span className="text-xl font-bold">Andrea Wennecke</span>
-              </div>
+              <div className="text-xl font-bold">Andrea Wennecke</div>
               <Button 
                 variant="ghost" 
                 size="icon" 
