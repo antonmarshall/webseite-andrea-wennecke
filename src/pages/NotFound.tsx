@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 import Header from '@/components/Header';
@@ -13,7 +12,7 @@ const NotFound = () => {
           <h1 className="text-6xl font-bold mb-4 text-therapy-blue">404</h1>
           <p className="text-xl text-gray-600 mb-8">Die gesuchte Seite wurde nicht gefunden.</p>
           <Link 
-            to="/" 
+            to="/webseite-andrea-wennecke/" 
             className="inline-block bg-therapy-blue hover:bg-therapy-blue/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
           >
             Zurück zur Startseite
