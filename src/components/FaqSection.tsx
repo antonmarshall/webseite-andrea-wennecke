@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -15,19 +16,19 @@ const FaqSection = () => {
   const faqs: FaqItem[] = [
     {
       question: "Wie läuft eine Therapiesitzung ab?",
-      answer: "Eine typische Therapiesitzung dauert etwa 50-60 Minuten. Nach einem kurzen Gespräch über Ihr aktuelles Befinden und mögliche Themen für die Sitzung, nutzen wir kreative Methoden wie Malen, Gestalten oder körperorientierte Übungen. Zum Abschluss reflektieren wir gemeinsam über den Prozess und die entstandenen Erkenntnisse."
+      answer: "Wir starten mit einem kurzen Gespräch über Ihr Befinden. Dann nutzen wir kreative Methoden wie Malen oder Bewegung, je nachdem, was für Sie stimmig ist. Am Ende reflektieren wir gemeinsam die Erfahrungen."
     },
     {
       question: "Für wen eignet sich Kreativtherapie?",
-      answer: "Kreativtherapie eignet sich grundsätzlich für Menschen jeden Alters und mit verschiedensten Anliegen – von Stressbewältigung über Traumaverarbeitung bis hin zu persönlicher Entwicklung. Künstlerische Vorkenntnisse sind nicht erforderlich, da der therapeutische Prozess und nicht das künstlerische Ergebnis im Vordergrund steht."
+      answer: "Kreativtherapie ist für alle da - egal ob jung oder alt. Sie brauchen keine künstlerischen Vorkenntnisse. Der Weg und das Erleben stehen im Mittelpunkt, nicht das Ergebnis."
     },
     {
       question: "Werden die Kosten von der Krankenkasse übernommen?",
-      answer: "Die Kostenübernahme hängt von Ihrer Versicherungssituation ab. Einige private Krankenkassen übernehmen die Kosten teilweise oder vollständig. Gesetzliche Krankenkassen übernehmen die Kosten in der Regel nicht direkt, können aber über bestimmte Zusatzleistungen oder im Rahmen einer ärztlich verordneten Heilmitteltherapie abgedeckt sein. Ich berate Sie gerne zu möglichen Erstattungswegen."
+      answer: "Private Kassen übernehmen oft einen Teil der Kosten. Bei gesetzlichen Kassen ist eine Erstattung über Zusatzleistungen möglich. Sprechen Sie mich gerne an - ich berate Sie zu den Möglichkeiten."
     },
     {
-      question: "Brauche ich künstlerische Erfahrung für die Kunsttherapie?",
-      answer: "Nein, künstlerische Vorkenntnisse oder Talente sind nicht notwendig. In der Kunsttherapie geht es nicht um ästhetische Bewertungen oder handwerkliches Können, sondern um den therapeutischen Prozess und die persönliche Ausdrucksmöglichkeit. Alle Materialien und Techniken werden so eingesetzt, dass sie für jeden zugänglich sind."
+      question: "Brauche ich künstlerische Erfahrung?",
+      answer: "Nein, keinerlei Vorkenntnisse nötig. Es geht um Ihren persönlichen Ausdruck und darum, was die kreativen Prozesse in Ihnen bewegen - nicht um künstlerische Leistung."
     },
   ];
 
@@ -41,12 +42,12 @@ const FaqSection = () => {
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="mb-4 border border-gray-200 rounded-lg overflow-hidden bg-white transition-all duration-300 hover:bg-therapy-orange/5"
+              className="mb-4 border border-gray-200 rounded-lg overflow-hidden bg-white transition-all duration-300 hover:bg-therapy-orange/10"
             >
-              <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-therapy-orange/10 text-left font-medium text-therapy-blue">
+              <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-therapy-orange/20 text-left font-medium text-therapy-blue">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="px-6 py-4 text-gray-700">
+              <AccordionContent className="px-6 py-4 text-gray-700 text-base">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
