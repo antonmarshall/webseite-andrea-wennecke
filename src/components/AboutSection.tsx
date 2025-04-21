@@ -57,7 +57,7 @@ const AboutSection = () => {
           <div className="flex-1 flex justify-center items-center">
             <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="/images/profilbild.png" 
+                src="/webseite-andrea-wennecke/images/profilbild.png" 
                 alt="Andrea Wennecke"
                 className="w-full h-full object-cover"
               />
