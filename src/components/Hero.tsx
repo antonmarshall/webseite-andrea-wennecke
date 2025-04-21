@@ -3,24 +3,6 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CalendlyDialog } from '@/components/CalendlyDialog';
 
-const TherapyTypes = () => {
-  return (
-    <div className="max-w-2xl mx-auto space-y-3 mb-8">
-      <div className="text-xl md:text-2xl text-therapy-blue/90 font-medium space-y-2">
-        <div className="hover:text-therapy-blue transition-colors">
-          Kunst- und Gestaltungstherapie
-        </div>
-        <div className="hover:text-therapy-blue transition-colors">
-          Psychotherapie
-        </div>
-        <div className="hover:text-therapy-blue transition-colors">
-          Ausdruckstherapie
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const Hero = () => {
   return (
     <section className="relative bg-gradient-to-b from-therapy-orange/20 to-transparent pt-16 pb-20 md:pt-20 md:pb-28 px-4">
@@ -36,8 +18,6 @@ const Hero = () => {
           <h2 className="text-xl md:text-2xl font-semibold text-gray-600 mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             Kreativtherapie in Lübeck
           </h2>
-          
-          <TherapyTypes />
           
           <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-lg animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
             Traumaverarbeitung für Erwachsene und Jugendliche in einem geschützten, heilsamen Raum.
