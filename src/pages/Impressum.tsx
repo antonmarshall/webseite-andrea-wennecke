@@ -1,7 +1,9 @@
-
 import React from 'react';
+import { Link } from "react-router-dom";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 const Impressum = () => {
   return (
@@ -9,6 +11,14 @@ const Impressum = () => {
       <Header />
       <main className="flex-grow py-16 px-4">
         <div className="container mx-auto max-w-4xl">
+          <Button
+            variant="ghost"
+            className="mb-8 group"
+            onClick={() => window.history.back()}
+          >
+            <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            Zurück
+          </Button>
           <h1 className="text-3xl font-bold mb-8 text-therapy-blue">Impressum</h1>
           
           <section className="mb-8">
