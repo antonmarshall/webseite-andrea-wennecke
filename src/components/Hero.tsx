@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CalendlyDialog } from '@/components/CalendlyDialog';
@@ -31,7 +30,7 @@ const Hero = () => {
                 Termin vereinbaren
               </Button>
             </CalendlyDialog>
-            <a href="#services">
+            <a href="/webseite-andrea-wennecke/#services">
               <Button
                 variant="outline"
                 className="border-therapy-blue text-therapy-blue hover:bg-therapy-blue/10 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
