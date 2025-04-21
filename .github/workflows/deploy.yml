@@ -26,10 +26,13 @@ jobs:
       
       - name: Build
         run: npm run build
+        env:
+          BASE_URL: '/webseite-andrea-wennecke/'
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages 
+          publish_branch: gh-pages
+          destination_dir: webseite-andrea-wennecke 
