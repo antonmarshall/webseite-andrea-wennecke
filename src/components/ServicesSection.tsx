@@ -15,11 +15,11 @@ const ServiceCard = ({ icon, title, description, colorClass, index }: ServiceCar
       className={`service-card border-t-4 ${colorClass} transition-all duration-300 hover:bg-therapy-orange/10 hover:scale-[1.03] cursor-pointer group bg-white`}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="service-card-icon group-hover:text-therapy-blue/80 transition-colors">
+      <div className="service-card-icon">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-therapy-blue group-hover:text-therapy-blue/60 transition-colors">{title}</h3>
-      <p className="text-gray-700 group-hover:text-gray-900 transition-colors">{description}</p>
+      <h3 className="text-xl font-semibold mb-2 text-therapy-blue">{title}</h3>
+      <p className="text-gray-700">{description}</p>
     </div>
   );
 };
@@ -75,13 +75,14 @@ const ServicesSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div className="glass-card p-8 cursor-pointer">
-              <div className="service-card-icon text-therapy-blue">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-therapy-blue">{service.title}</h3>
-              <p className="text-gray-700">{service.description}</p>
-            </div>
+            <ServiceCard
+              key={index}
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+              colorClass={service.colorClass}
+              index={index}
+            />
           ))}
         </div>
       </div>
