@@ -10,7 +10,7 @@ const inputPath = join(__dirname, '../public/images/profilbild.png');
 const outputPath = join(__dirname, '../public/images/profilbild.png');
 
 sharp(inputPath)
-  .resize(400, 400, {
+  .resize(300, 300, {
     fit: 'inside',
     withoutEnlargement: true
   })
