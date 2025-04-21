@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Palette, Brain, Music, Heart, User, Users } from 'lucide-react';
+import { Palette, Brain, Music, Heart, User, Users, Hand } from 'lucide-react';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -13,14 +12,14 @@ interface ServiceCardProps {
 const ServiceCard = ({ icon, title, description, colorClass, index }: ServiceCardProps) => {
   return (
     <div 
-      className={`service-card border-t-4 ${colorClass} transition-all duration-300 hover:bg-therapy-orange/10 animate-fade-in`}
+      className={`service-card border-t-4 ${colorClass} transition-all duration-300 hover:bg-therapy-orange/20 hover:scale-[1.02] cursor-pointer group`}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="service-card-icon">
+      <div className="service-card-icon group-hover:text-therapy-blue/80 transition-colors">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-therapy-blue">{title}</h3>
-      <p className="text-gray-700">{description}</p>
+      <h3 className="text-xl font-semibold mb-2 text-therapy-blue group-hover:text-therapy-blue/80 transition-colors">{title}</h3>
+      <p className="text-gray-700 group-hover:text-gray-800 transition-colors">{description}</p>
     </div>
   );
 };
