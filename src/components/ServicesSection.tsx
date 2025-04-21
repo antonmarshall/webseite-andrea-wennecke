@@ -13,7 +13,7 @@ interface ServiceCardProps {
 const ServiceCard = ({ icon, title, description, colorClass, index }: ServiceCardProps) => {
   return (
     <div 
-      className={`service-card border-t-4 ${colorClass} animate-fade-in`}
+      className={`service-card border-t-4 ${colorClass} transition-all duration-300 hover:bg-therapy-orange/10 animate-fade-in`}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
       <div className="service-card-icon">

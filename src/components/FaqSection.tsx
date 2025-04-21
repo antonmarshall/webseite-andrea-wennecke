@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   Accordion,
@@ -42,9 +41,9 @@ const FaqSection = () => {
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="mb-4 border border-gray-200 rounded-lg overflow-hidden bg-white"
+              className="mb-4 border border-gray-200 rounded-lg overflow-hidden bg-white transition-all duration-300 hover:bg-therapy-orange/5"
             >
-              <AccordionTrigger className="px-6 py-4 hover:bg-gray-50 text-left font-medium text-therapy-blue">
+              <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-therapy-orange/10 text-left font-medium text-therapy-blue">
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="px-6 py-4 text-gray-700">

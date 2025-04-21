@@ -12,7 +12,7 @@ const AboutCard = ({
 }) => {
   return (
     <div 
-      className="glass-card p-8 animate-fade-in" 
+      className="glass-card p-8 transition-all duration-300 hover:bg-therapy-orange/10 animate-fade-in" 
       style={{ animationDelay: `${0.1 * delayIndex}s` }}
     >
       <h3 className="text-xl font-semibold mb-4 text-therapy-blue">{title}</h3>
@@ -25,15 +25,15 @@ const AboutSection = () => {
   const aboutCards = [
     {
       title: "Erfahrene Therapeutin",
-      content: "Als langjährig tätige Kreativtherapeutin biete ich einen geschützten Raum für Menschen, die durch kunsttherapeutische und körperorientierte Methoden ihr Wohlbefinden steigern möchten."
+      content: "Als Kreativtherapeutin schaffe ich einen sicheren Raum, in dem Sie durch Kunst und Bewegung neue Wege zu sich selbst entdecken können."
     },
     {
       title: "Ganzheitlicher Ansatz",
-      content: "Mein therapeutischer Ansatz vereint Kunsttherapie, körperorientierte Psychotherapie und Traumatherapie, um vielfältige Wege des Ausdrucks und der Heilung anzubieten."
+      content: "Ich verbinde Kunsttherapie, Körperarbeit und Traumatherapie zu einem ganzheitlichen Weg der Heilung und des persönlichen Wachstums."
     },
     {
       title: "Persönliche Begleitung",
-      content: "Ich begleite Sie einfühlsam und individuell auf Ihrem persönlichen Weg zu mehr innerer Balance und Klarheit - unabhängig von Alter und Lebenssituation."
+      content: "Mit Wärme und Verständnis begleite ich Sie auf Ihrem individuellen Weg zu mehr Klarheit und innerer Balance."
     },
   ];
   
@@ -41,15 +41,28 @@ const AboutSection = () => {
     <section id="about" className="section bg-therapy-orange/30">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-center text-3xl font-bold mb-10 text-therapy-blue">Über Mich</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {aboutCards.map((card, index) => (
-            <AboutCard 
-              key={index} 
-              title={card.title} 
-              content={card.content}
-              delayIndex={index + 1}
-            />
-          ))}
+        <div className="flex flex-col-reverse md:flex-row gap-8">
+          <div className="flex-1">
+            <div className="grid grid-cols-1 gap-6">
+              {aboutCards.map((card, index) => (
+                <AboutCard 
+                  key={index} 
+                  title={card.title} 
+                  content={card.content}
+                  delayIndex={index + 1}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="flex-1 flex justify-center items-start">
+            <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src="/placeholder.svg" 
+                alt="Andrea Wennecke"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

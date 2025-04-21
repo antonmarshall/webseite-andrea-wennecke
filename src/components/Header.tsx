@@ -47,17 +47,12 @@ const Header = () => {
           </div>
 
           <nav className="hidden md:flex space-x-6">
-            <Link 
-              to="/" 
-              className={`transition-colors duration-300 hover:text-therapy-lightBlue ${location.pathname === '/' && !activeSection ? 'text-therapy-lightBlue' : ''}`}
-            >
-              Home
-            </Link>
             {['about', 'services', 'prices', 'faq', 'contact'].map((section) => (
               <a 
                 key={section}
                 href={`#${section}`}
-                className={`transition-colors duration-300 hover:text-therapy-lightBlue ${isActive(section) ? 'text-therapy-lightBlue' : ''}`}
+                className={`transition-all duration-300 px-3 py-1 rounded-md hover:text-therapy-lightBlue
+                  ${isActive(section) ? 'bg-white/10 text-therapy-lightBlue' : ''}`}
               >
                 {section === 'about' ? 'Über mich' :
                  section === 'services' ? 'Therapieangebote' :
