@@ -1,5 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { getPath } from "@/lib/utils";
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
@@ -9,8 +10,12 @@ interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export const Link = ({ href, children, className, isExternal, ...props }: LinkProps) => {
-  // Check if the link is external (starts with http:// or https://)
-  const isExternalLink = isExternal || href.startsWith('http://') || href.startsWith('https://');
+  // Check if the link is external (starts with http:// or https://) or is a mailto: or tel: link
+  const isExternalLink = isExternal || 
+    href.startsWith('http://') || 
+    href.startsWith('https://') ||
+    href.startsWith('mailto:') ||
+    href.startsWith('tel:');
 
   if (isExternalLink) {
     return (
@@ -26,10 +31,11 @@ export const Link = ({ href, children, className, isExternal, ...props }: LinkPr
     );
   }
 
-  // For internal links, use React Router's Link
+  // For internal links, use React Router's Link with the correct base path
+  const internalPath = href.startsWith('#') ? href : href.replace(/^\//, '');
   return (
     <RouterLink
-      to={href}
+      to={internalPath}
       className={cn("hover:underline", className)}
       {...props}
     >

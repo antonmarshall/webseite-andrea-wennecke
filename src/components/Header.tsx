@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from '@/components/ui/link';
 import { Button } from '@/components/ui/button';
+import { getPath } from '@/lib/utils';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -41,16 +41,16 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="text-lg md:text-xl font-bold">
-            <Link to="/" className="flex items-center transition-colors duration-300 hover:text-therapy-lightBlue">
+            <Link href="/" className="flex items-center transition-colors duration-300 hover:text-therapy-lightBlue">
               Andrea Wennecke
             </Link>
           </div>
 
           <nav className="hidden md:flex space-x-6">
             {['about', 'services', 'prices', 'faq', 'contact'].map((section) => (
-              <a 
+              <Link 
                 key={section}
-                href={`/webseite-andrea-wennecke/#${section}`}
+                href={`#${section}`}
                 className={`transition-all duration-300 px-3 py-1 rounded-md hover:text-therapy-lightBlue
                   ${isActive(section) ? 'bg-white/10 text-therapy-lightBlue' : ''}`}
               >
@@ -59,7 +59,7 @@ const Header = () => {
                  section === 'prices' ? 'Preise' :
                  section === 'faq' ? 'FAQ' :
                  'Kontakt'}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -89,47 +89,47 @@ const Header = () => {
             </div>
             <nav className="flex flex-col space-y-4 px-4 pt-8 text-lg">
               <Link 
-                to="/" 
+                href="/" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 Home
               </Link>
-              <a 
-                href="/webseite-andrea-wennecke/#about" 
+              <Link 
+                href="#about" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 Über mich
-              </a>
-              <a 
-                href="/webseite-andrea-wennecke/#services" 
+              </Link>
+              <Link 
+                href="#services" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 Therapieangebote
-              </a>
-              <a 
-                href="/webseite-andrea-wennecke/#prices" 
+              </Link>
+              <Link 
+                href="#prices" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 Preise
-              </a>
-              <a 
-                href="/webseite-andrea-wennecke/#faq" 
+              </Link>
+              <Link 
+                href="#faq" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 FAQ
-              </a>
-              <a 
-                href="/webseite-andrea-wennecke/#contact" 
+              </Link>
+              <Link 
+                href="#contact" 
                 className="py-2 hover:bg-white/10 px-4 rounded-lg"
                 onClick={toggleMenu}
               >
                 Kontakt
-              </a>
+              </Link>
             </nav>
           </div>
         )}
