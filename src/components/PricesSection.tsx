@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { User, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,11 +12,11 @@ interface PriceCardProps {
 const PriceCard = ({ icon, title, price, index }: PriceCardProps) => {
   return (
     <div 
-      className="bg-white rounded-xl shadow-md p-8 text-center transition-all duration-300 hover:scale-[1.01] hover:bg-therapy-orange/10 hover:shadow-lg animate-fade-in cursor-pointer"
+      className="bg-white rounded-xl shadow-md p-8 text-center transition-all duration-300 hover:scale-[1.01] hover:bg-therapy-orange/5 hover:shadow-lg animate-fade-in cursor-pointer"
       style={{ animationDelay: `${0.1 * index}s` }}
     >
       <div className="flex justify-center mb-4">
-        <div className="h-16 w-16 bg-therapy-blue/10 rounded-full flex items-center justify-center text-therapy-blue hover:bg-therapy-purple/20 transition-colors">
+        <div className="h-16 w-16 bg-therapy-blue/10 rounded-full flex items-center justify-center text-therapy-blue hover:bg-therapy-orange/10 transition-colors">
           {icon}
         </div>
       </div>

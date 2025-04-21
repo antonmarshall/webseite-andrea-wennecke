@@ -12,13 +12,13 @@ interface ServiceCardProps {
 const ServiceCard = ({ icon, title, description, colorClass, index }: ServiceCardProps) => {
   return (
     <div 
-      className={`service-card border-t-4 ${colorClass} transition-all duration-300 hover:bg-therapy-orange/20 hover:scale-[1.02] cursor-pointer group`}
+      className={`service-card border-t-4 ${colorClass} transition-all duration-300 hover:bg-therapy-orange/5 hover:scale-[1.02] cursor-pointer group bg-white`}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="service-card-icon group-hover:text-therapy-blue/80 transition-colors">
+      <div className="service-card-icon group-hover:text-therapy-blue transition-colors">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-therapy-blue group-hover:text-therapy-blue/80 transition-colors">{title}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-therapy-blue group-hover:text-therapy-blue/90 transition-colors">{title}</h3>
       <p className="text-gray-700 group-hover:text-gray-800 transition-colors">{description}</p>
     </div>
   );
