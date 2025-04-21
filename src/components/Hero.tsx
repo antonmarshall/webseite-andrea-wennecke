@@ -4,22 +4,19 @@ import { Button } from '@/components/ui/button';
 import { CalendlyDialog } from '@/components/CalendlyDialog';
 
 const TherapyTypes = () => {
-  const therapyTypes = [
-    "Kunst- und Gestaltungstherapie",
-    "Psychotherapie", 
-    "Ausdruckstherapie"
-  ];
-
   return (
-    <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
-      {therapyTypes.map((type, index) => (
-        <div 
-          key={index} 
-          className="bg-therapy-orange/20 px-4 py-2 rounded-lg text-therapy-blue font-semibold text-center transition-colors hover:bg-therapy-orange/30"
-        >
-          {type}
+    <div className="max-w-2xl mx-auto space-y-3 mb-8">
+      <div className="text-xl md:text-2xl text-therapy-blue/90 font-medium space-y-2">
+        <div className="hover:text-therapy-blue transition-colors">
+          Kunst- und Gestaltungstherapie
         </div>
-      ))}
+        <div className="hover:text-therapy-blue transition-colors">
+          Psychotherapie
+        </div>
+        <div className="hover:text-therapy-blue transition-colors">
+          Ausdruckstherapie
+        </div>
+      </div>
     </div>
   );
 };
@@ -42,9 +39,10 @@ const Hero = () => {
           
           <TherapyTypes />
           
-          <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-lg animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
             Traumaverarbeitung für Erwachsene und Jugendliche in einem geschützten, heilsamen Raum.
           </p>
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <CalendlyDialog>
               <Button 
