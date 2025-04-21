@@ -13,7 +13,7 @@ const AboutCard = ({
 }) => {
   return (
     <div 
-      className="glass-card p-8 transition-all duration-300 hover:bg-therapy-orange/20 hover:scale-[1.01] cursor-pointer group" 
+      className="glass-card p-8 transition-all duration-300 hover:bg-neutral-200/30 hover:scale-[1.01] cursor-pointer group" 
       style={{ animationDelay: `${0.1 * delayIndex}s` }}
     >
       <h3 className="text-xl font-semibold mb-4 text-therapy-blue group-hover:text-therapy-blue/80 transition-colors">
@@ -41,7 +41,7 @@ const AboutSection = () => {
   ];
   
   return (
-    <section id="about" className="section bg-therapy-orange/30">
+    <section id="about" className="section bg-neutral-100/50">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-center text-3xl font-bold mb-10 text-therapy-blue">Über Mich</h2>
         <div className="flex flex-col md:flex-row gap-8 items-stretch">
@@ -58,7 +58,7 @@ const AboutSection = () => {
           <div className="flex-1 flex justify-center items-center">
             <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-lg transition-transform hover:scale-[1.02]">
               <img 
-                src="/placeholder.svg" 
+                src="/lovable-uploads/35104afe-c4aa-4b1f-8771-6f5aae3f5ad2.png" 
                 alt="Andrea Wennecke"
                 className="w-full h-full object-cover"
               />

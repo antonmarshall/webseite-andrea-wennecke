@@ -3,6 +3,27 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CalendlyDialog } from '@/components/CalendlyDialog';
 
+const TherapyTypes = () => {
+  const therapyTypes = [
+    "Kunst- und Gestaltungstherapie",
+    "Psychotherapie", 
+    "Ausdruckstherapie"
+  ];
+
+  return (
+    <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
+      {therapyTypes.map((type, index) => (
+        <div 
+          key={index} 
+          className="bg-therapy-orange/20 px-4 py-2 rounded-lg text-therapy-blue font-semibold text-center transition-colors hover:bg-therapy-orange/30"
+        >
+          {type}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const Hero = () => {
   return (
     <section className="relative bg-gradient-to-b from-therapy-orange/20 to-transparent pt-16 pb-20 md:pt-20 md:pb-28 px-4">
@@ -18,8 +39,11 @@ const Hero = () => {
           <h2 className="text-xl md:text-2xl font-semibold text-gray-600 mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             Kreativtherapie in Lübeck
           </h2>
+          
+          <TherapyTypes />
+          
           <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Kunst- und Gestaltungstherapie, Psychotherapie, Ausdruckstherapie: Traumaverarbeitung für Erwachsene und Jugendliche in einem geschützten Raum.
+            Traumaverarbeitung für Erwachsene und Jugendliche in einem geschützten, heilsamen Raum.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <CalendlyDialog>
