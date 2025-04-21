@@ -41,7 +41,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="text-lg md:text-xl font-bold">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center transition-colors duration-300 hover:text-therapy-lightBlue">
               Andrea Wennecke
             </Link>
           </div>
@@ -51,7 +51,7 @@ const Header = () => {
               <Link 
                 key={section}
                 href={`#${section}`}
-                className={`transition-all duration-300 px-3 py-1 rounded-md
+                className={`transition-all duration-300 px-3 py-1 rounded-md hover:text-therapy-lightBlue
                   ${isActive(section) ? 'bg-white/10 text-therapy-lightBlue' : ''}`}
               >
                 {section === 'about' ? 'Über mich' :
