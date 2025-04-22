@@ -1,25 +1,30 @@
 import React from 'react';
-import { Palette, Brain, Music, Heart, User, Users, Hand } from 'lucide-react';
 
 interface ServiceCardProps {
-  icon: React.ReactNode;
   title: string;
   description: string;
+  image: string;
   colorClass: string;
   index: number;
 }
 
-const ServiceCard = ({ icon, title, description, colorClass, index }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCardProps) => {
   return (
     <div 
-      className={`service-card border-t-4 ${colorClass} p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md cursor-pointer group bg-white`}
+      className={`service-card relative overflow-hidden rounded-xl shadow-sm transition-all duration-300 cursor-pointer group`}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className={`service-card-icon mb-4 ${colorClass.replace('border-', 'text-')}`}>
-        {icon}
+      <div className="aspect-w-16 aspect-h-9">
+        <img 
+          src={image} 
+          alt={title}
+          className="w-full h-full object-cover"
+        />
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-therapy-blue">{title}</h3>
-      <p className="text-gray-700">{description}</p>
+      <div className={`absolute inset-0 bg-therapy-${colorClass} opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-center p-6`}>
+        <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+        <p className="text-white text-center">{description}</p>
+      </div>
     </div>
   );
 };
@@ -27,40 +32,40 @@ const ServiceCard = ({ icon, title, description, colorClass, index }: ServiceCar
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Palette className="h-12 w-12" />,
       title: "Kunsttherapie",
       description: "Durch freies Malen, Formen und kreative Materialien Zugang zu Emotionen finden.",
-      colorClass: "border-therapy-lightBlue hover:bg-therapy-lightBlue/10",
+      image: "/images/kunsttherapie.jpg",
+      colorClass: "creative",
     },
     {
-      icon: <Brain className="h-12 w-12" />,
       title: "Körperorientierte Psychotherapie",
       description: "Verbindung von Körper und Psyche zur ganzheitlichen Wohlbefinden.",
-      colorClass: "border-therapy-purple hover:bg-therapy-purple/10",
+      image: "/images/Körperorientierte Psychotherapie.jpg",
+      colorClass: "body",
     },
     {
-      icon: <Music className="h-12 w-12" />,
       title: "Ausdruckstherapie",
       description: "Verschiedene kreative Ausdrucksformen nutzen, um Emotionen zu verarbeiten und neue Perspektiven zu gewinnen.",
-      colorClass: "border-therapy-pink hover:bg-therapy-pink/10",
+      image: "/images/Ausdruckstherapie.jpg",
+      colorClass: "expression",
     },
     {
-      icon: <Heart className="h-12 w-12" />,
       title: "Traumatherapie",
       description: "Behutsame Bearbeitung traumatischer Erfahrungen durch kreative und körperorientierte Methoden.",
-      colorClass: "border-therapy-red hover:bg-therapy-red/10",
+      image: "/images/psychotrauma.jpg",
+      colorClass: "healing",
     },
     {
-      icon: <User className="h-12 w-12" />,
       title: "Einzeltherapie",
       description: "Individuell zugeschnittene Begleitung für persönliche Veränderungswünsche und Entwicklungsziele.",
-      colorClass: "border-therapy-green hover:bg-therapy-green/10",
+      image: "/images/einzeltherapie.jpg",
+      colorClass: "individual",
     },
     {
-      icon: <Users className="h-12 w-12" />,
       title: "Gruppentherapie",
       description: "In kleinen Gruppen verschiedene Formen und gemeinsam kreative Lösungswege erarbeiten.",
-      colorClass: "border-therapy-turquoise hover:bg-therapy-turquoise/10",
+      image: "/images/Gruppentherapie.jpg",
+      colorClass: "group",
     },
   ];
 
@@ -77,9 +82,9 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <ServiceCard
               key={index}
-              icon={service.icon}
               title={service.title}
               description={service.description}
+              image={service.image}
               colorClass={service.colorClass}
               index={index}
             />
