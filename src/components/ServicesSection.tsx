@@ -9,6 +9,10 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCardProps) => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    console.error(`Failed to load image: ${image}`, e);
+  };
+
   return (
     <div 
       className={`service-card relative overflow-hidden rounded-xl shadow-sm transition-all duration-300 cursor-pointer group`}
@@ -19,6 +23,7 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
           src={image} 
           alt={title}
           className="w-full h-full object-cover"
+          onError={handleImageError}
         />
       </div>
       <div className={`absolute inset-0 bg-therapy-${colorClass} opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-center p-6`}>
