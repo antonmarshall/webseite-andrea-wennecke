@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "go": "git add . && git commit -m \"Update website\" && git push && npm run build",
-    "deploy": "npm run build && git add . && git commit -m \"Deploy to GitHub Pages\" && git push"
+    "deploy": "npm run build && git add . && git commit -m \"Deploy to GitHub Pages\" && git push && echo \"Deployment complete! Please check your GitHub Pages settings at https://github.com/antonmarshall/webseite-andrea-wennecke/settings/pages\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
