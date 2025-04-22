@@ -1,7 +1,6 @@
 import React from 'react';
 import { User, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { CalendlyDialog } from '@/components/CalendlyDialog';
 
 interface PriceCardProps {
   icon: React.ReactNode;
@@ -22,12 +21,7 @@ const PriceCard = ({ icon, title, price, index }: PriceCardProps) => {
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-4 text-therapy-blue">{title}</h3>
-      <p className="text-2xl font-bold mb-6 text-gray-800">{price}</p>
-      <CalendlyDialog>
-        <div className="w-full">
-          Termin vereinbaren
-        </div>
-      </CalendlyDialog>
+      <p className="text-2xl font-bold text-gray-800">{price}</p>
     </div>
   );
 };
