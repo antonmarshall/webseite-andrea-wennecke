@@ -20,7 +20,7 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
     >
       <div className="aspect-w-16 aspect-h-9">
         <img 
-          src={image} 
+          src={`/webseite-andrea-wennecke${image}`} 
           alt={title}
           className="w-full h-full object-cover"
           onError={handleImageError}
