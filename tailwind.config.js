@@ -10,7 +10,7 @@ export default {
         'therapy-blue': '#153d64',
         'therapy-blue-dark': '#0f2b4a',
         'therapy-orange': '#F97316',
-        'therapy-beige': '#f2e3d2',
+        'therapy-beige': '#e8d5c4',
         // Service card colors
         'moss-green': '#8B9A7D',
         'curry-yellow': '#D4A373',
@@ -21,6 +21,7 @@ export default {
       },
       backgroundImage: {
         'linen': "url('/images/linen-texture.svg')",
+        'sand': "url('/images/sand-texture.svg')",
       },
     },
   },
