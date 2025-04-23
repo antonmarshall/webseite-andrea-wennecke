@@ -27,7 +27,7 @@ const FaqSection = () => {
     },
     {
       question: "Was kostet eine Therapiesitzung?",
-      answer: "Eine Einzelsitzung (60 Minuten) kostet 80€. Für Gruppen- und Paartherapie gelten andere Tarife. Bei regelmäßiger Teilnahme und in besonderen Situationen sind individuelle Vereinbarungen möglich. Sprechen Sie mich gerne darauf an."
+      answer: "Eine Einzelsitzung (60 Minuten) kostet 120€. Eine Gruppensitzung kostet 200€. Bei regelmäßiger Teilnahme und in besonderen Situationen sind individuelle Vereinbarungen möglich. Sprechen Sie mich gerne darauf an."
     },
     {
       question: "Brauche ich künstlerische Erfahrung?",
