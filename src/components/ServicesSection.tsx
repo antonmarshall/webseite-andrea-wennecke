@@ -19,25 +19,25 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
   const getHoverColor = (colorClass: string) => {
     switch (colorClass) {
       case 'creative':
-        return 'bg-moss-green/90'; // Moosgrün
+        return 'bg-moss-green/80'; // Moosgrün
       case 'body':
-        return 'bg-curry-yellow/90'; // Curry Gelb
+        return 'bg-curry-yellow/80'; // Curry Gelb
       case 'expression':
-        return 'bg-soft-blue/90'; // Sanftes Blau
+        return 'bg-soft-blue/80'; // Sanftes Blau
       case 'healing':
-        return 'bg-warm-purple/90'; // Warmes Lila
+        return 'bg-warm-purple/80'; // Warmes Lila
       case 'individual':
-        return 'bg-coral-pink/90'; // Korallenrosa
+        return 'bg-coral-pink/80'; // Korallenrosa
       case 'group':
-        return 'bg-sage-green/90'; // Salbeigrün
+        return 'bg-sage-green/80'; // Salbeigrün
       default:
-        return 'bg-gray-600/90';
+        return 'bg-gray-600/80';
     }
   };
 
   return (
     <div 
-      className="service-card relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer group h-[400px]"
+      className="service-card relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer h-[400px] group"
       style={{ animationDelay: `${0.1 * index}s` }}
     >
       <div className="relative h-full">
@@ -45,7 +45,7 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
           <img 
             src={image} 
             alt={title}
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
             onError={handleImageError}
           />
         ) : (
@@ -53,12 +53,14 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
             <span className="text-gray-500">{title}</span>
           </div>
         )}
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-4 rounded-2xl">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-center justify-center p-4 rounded-2xl">
           <h3 className="text-2xl font-semibold text-white text-center">{title}</h3>
         </div>
       </div>
-      <div className={`absolute inset-0 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center p-8 rounded-2xl`}>
-        <p className="text-white text-center text-lg leading-relaxed">{description}</p>
+      <div className={`absolute inset-0 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-center items-center p-8 rounded-2xl`}>
+        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+          <p className="text-white text-center text-lg leading-relaxed">{description}</p>
+        </div>
       </div>
     </div>
   );
