@@ -3,8 +3,8 @@ import { Link } from '@/components/ui/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-therapy-warm-dark py-12">
-      <div className="container mx-auto max-w-6xl px-4">
+    <footer className="bg-therapy-blue text-white/90 py-12">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Navigation Links */}
           <div>
@@ -19,20 +19,36 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-therapy-blue">Kontakt</h3>
-            <p className="text-gray-600">Andrea Wennecke</p>
-            <p className="text-gray-600">Beckergrube 11</p>
-            <p className="text-gray-600">23552 Lübeck</p>
-            <p className="text-gray-600">Tel: +49 451 47047/42</p>
-            <p className="text-gray-600">Email: info@kreativtherapie-wennecke.de</p>
+            <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
+            <div className="space-y-2 text-white/80">
+              <p>Andrea Wennecke</p>
+              <p>Beckergrube 11, 23552 Lübeck</p>
+              <p>
+                <Link href="mailto:info@kreativtherapie-wennecke.de" className="hover:text-white transition-colors">
+                  info@kreativtherapie-wennecke.de
+                </Link>
+              </p>
+              <p>
+                <Link href="tel:+4945147047/42" className="hover:text-white transition-colors">
+                  +49 451 47047/42
+                </Link>
+              </p>
+            </div>
           </div>
 
           {/* Legal Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-therapy-blue">Rechtliche Hinweise</h3>
-            <p className="text-gray-600">© 2024 Andrea Wennecke</p>
-            <p className="text-gray-600">Alle Rechte vorbehalten</p>
+            <h3 className="text-lg font-semibold mb-4">Rechtliches</h3>
+            <ul className="space-y-2">
+              <li><Link href="/impressum" className="text-white/80 hover:text-white transition-colors">Impressum</Link></li>
+              <li><Link href="/datenschutz" className="text-white/80 hover:text-white transition-colors">Datenschutz</Link></li>
+            </ul>
           </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-12 pt-4 border-t border-white/20 text-center text-white/60">
+          <p>&copy; {new Date().getFullYear()} Andrea Wennecke. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>

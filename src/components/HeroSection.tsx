@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative bg-therapy-warm/30 py-20 md:py-32">
+    <section className="relative bg-white py-20 md:py-32">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-therapy-blue mb-6">
@@ -18,7 +18,7 @@ const HeroSection = () => {
               to="services"
               smooth={true}
               duration={500}
-              className="bg-therapy-cream-light text-therapy-blue px-8 py-3 rounded-full hover:bg-therapy-cream transition-colors duration-300 text-center border border-therapy-blue"
+              className="bg-white text-therapy-blue px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 text-center border border-therapy-blue"
             >
               Therapieangebote
             </Link>

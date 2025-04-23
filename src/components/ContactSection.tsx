@@ -22,7 +22,7 @@ const ContactSection = () => {
   const isFormValid = formData.name && formData.email && formData.subject && formData.message;
 
   return (
-    <section className="relative bg-therapy-warm/30 py-20">
+    <section id="contact" className="section bg-therapy-beige/30 relative">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-therapy-blue">Kontakt</h2>
@@ -32,7 +32,7 @@ const ContactSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-therapy-sand-light p-8 rounded-xl shadow-md flex flex-col min-h-[500px]">
+          <div className="bg-white p-8 rounded-xl shadow-md flex flex-col min-h-[500px] bg-linen">
             <h3 className="text-xl font-semibold mb-6 text-therapy-blue">Kontaktinformationen</h3>
             
             <div className="space-y-6 flex-grow">
@@ -82,7 +82,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="bg-therapy-sand-light p-8 rounded-xl shadow-md flex flex-col min-h-[500px]">
+          <div className="bg-white p-8 rounded-xl shadow-md flex flex-col min-h-[500px] bg-linen">
             <h3 className="text-xl font-semibold mb-6 text-therapy-blue">Schreiben Sie mir</h3>
             <form className="space-y-4 flex-grow">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
