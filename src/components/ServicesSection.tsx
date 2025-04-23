@@ -53,15 +53,16 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
             <span className="text-gray-500">{title}</span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-center justify-center p-4 rounded-2xl">
-          <h3 className="text-2xl font-semibold text-white text-center">{title}</h3>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center p-4 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-white text-center mt-4">{title}</h3>
+          <div className="flex-1 flex items-center justify-center">
+            <p className="text-white text-center text-lg leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 max-w-[90%]">
+              {description}
+            </p>
+          </div>
         </div>
       </div>
-      <div className={`absolute inset-0 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-center items-center p-8 rounded-2xl`}>
-        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-          <p className="text-white text-center text-lg leading-relaxed">{description}</p>
-        </div>
-      </div>
+      <div className={`absolute inset-0 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl`} />
     </div>
   );
 };
