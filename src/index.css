@@ -9,7 +9,7 @@
 
   body {
     @apply text-gray-900 font-sans tracking-wide leading-relaxed;
-    background-color: #f8f4f0;
+    background-color: #F9F2E9;
     background-image: url('/images/sand-texture.svg');
     background-repeat: repeat;
   }

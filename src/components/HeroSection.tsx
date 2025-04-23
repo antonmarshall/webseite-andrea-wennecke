@@ -33,6 +33,13 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+        <img
+          src="/webseite-andrea-wennecke/images/hero-image.jpg"
+          alt="Andrea Wennecke - Kreativtherapie"
+          className="w-full h-full object-cover"
+        />
+      </div>
     </section>
   );
 };
