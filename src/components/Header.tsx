@@ -36,12 +36,12 @@ const Header = () => {
   const navItems = [
     { id: 'about', label: 'Über mich' },
     { id: 'services', label: 'Therapieangebote' },
-    { id: 'prices', label: 'Preise' },
+    { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Kontakt' }
   ];
 
   return (
-    <header className="sticky top-0 bg-therapy-blue text-white z-50 shadow-md">
+    <header className="sticky top-0 bg-therapy-blue/95 text-white z-50 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="text-lg md:text-xl font-bold">

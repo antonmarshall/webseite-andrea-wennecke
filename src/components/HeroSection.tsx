@@ -15,20 +15,20 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link
+              to="services"
+              smooth={true}
+              duration={500}
+              className="bg-white text-therapy-blue px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 text-center border border-therapy-blue"
+            >
+              Therapieangebote
+            </Link>
+            <Link
               to="contact"
               smooth={true}
               duration={500}
               className="bg-therapy-blue text-white px-8 py-3 rounded-full hover:bg-therapy-blue-dark transition-colors duration-300 text-center"
             >
               Termin vereinbaren
-            </Link>
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              className="bg-white text-therapy-blue px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 text-center border border-therapy-blue"
-            >
-              Mehr erfahren
             </Link>
           </div>
         </div>
