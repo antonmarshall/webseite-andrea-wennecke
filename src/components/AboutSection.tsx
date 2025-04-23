@@ -51,7 +51,7 @@ const AboutSection = () => {
                 <img 
                   src="/webseite-andrea-wennecke/images/profilbild.png" 
                   alt="Andrea Wennecke"
-                  className="w-full h-auto rounded-2xl"
+                  className="w-full h-auto object-cover rounded-2xl"
                 />
               </div>
             </div>
