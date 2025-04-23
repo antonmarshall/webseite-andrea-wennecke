@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CalendlyDialog } from '@/components/CalendlyDialog';
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const isFormValid = formData.name && formData.email && formData.subject && formData.message;
+
   return (
     <section id="contact" className="section bg-therapy-orange/30 relative">
       <div className="container mx-auto max-w-6xl">
@@ -74,6 +91,9 @@ const ContactSection = () => {
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-therapy-blue/50"
                     placeholder="Ihr Name"
                   />
@@ -83,6 +103,9 @@ const ContactSection = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-therapy-blue/50"
                     placeholder="Ihre Email"
                   />
@@ -94,6 +117,9 @@ const ContactSection = () => {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-therapy-blue/50"
                   placeholder="Betreff"
                 />
@@ -102,14 +128,31 @@ const ContactSection = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Nachricht</label>
                 <textarea
                   id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={4}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-therapy-blue/50"
                   placeholder="Ihre Nachricht"
                 ></textarea>
               </div>
             </form>
-            <div className="mt-8">
-              <Button className="w-full bg-therapy-blue hover:bg-therapy-blue/90">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Button
+                variant="outline"
+                className="w-full sm:w-auto bg-therapy-blue text-white hover:bg-therapy-blue-dark"
+              >
+                Termin vereinbaren
+              </Button>
+              <Button
+                type="submit"
+                className={`w-full sm:w-auto ${
+                  isFormValid 
+                    ? 'bg-therapy-blue text-white hover:bg-therapy-blue-dark' 
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+                disabled={!isFormValid}
+              >
                 Nachricht senden
               </Button>
             </div>
