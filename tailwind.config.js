@@ -10,7 +10,7 @@ export default {
         'therapy-blue': '#153d64',
         'therapy-blue-dark': '#0f2b4a',
         'therapy-beige': '#E6D0B8',
-        'card-warm': '#F5E6D3',
+        'card-warm': '#F8F4F0',
         // Service card colors
         'moss-green': '#8B9A7D',
         'curry-yellow': '#D4A373',
