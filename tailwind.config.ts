@@ -67,7 +67,14 @@ export default {
 					'healing': '#6B4423',
 					'individual': '#2F4F4F',
 					'group': '#556B2F'
-				}
+				},
+				'therapy-blue': '#2C3E50',
+				'moss-green': '#4A6B3D',
+				'curry-yellow': '#D4A017',
+				'soft-blue': '#6B8C9E',
+				'warm-purple': '#8B5FBF',
+				'coral-pink': '#FF6B6B',
+				'sage-green': '#8A9A7B',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

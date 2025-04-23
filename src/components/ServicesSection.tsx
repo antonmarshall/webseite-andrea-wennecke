@@ -16,30 +16,49 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
     setImageError(true);
   };
 
+  const getHoverColor = (colorClass: string) => {
+    switch (colorClass) {
+      case 'creative':
+        return 'bg-moss-green/90'; // Moosgrün
+      case 'body':
+        return 'bg-curry-yellow/90'; // Curry Gelb
+      case 'expression':
+        return 'bg-soft-blue/90'; // Sanftes Blau
+      case 'healing':
+        return 'bg-warm-purple/90'; // Warmes Lila
+      case 'individual':
+        return 'bg-coral-pink/90'; // Korallenrosa
+      case 'group':
+        return 'bg-sage-green/90'; // Salbeigrün
+      default:
+        return 'bg-gray-600/90';
+    }
+  };
+
   return (
     <div 
-      className={`service-card relative overflow-hidden rounded-xl shadow-sm transition-all duration-300 cursor-pointer group`}
+      className="service-card relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer group h-[400px]"
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="aspect-w-16 aspect-h-9 relative">
+      <div className="relative h-full">
         {!imageError ? (
           <img 
             src={image} 
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-2xl"
             onError={handleImageError}
           />
         ) : (
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+          <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-2xl">
             <span className="text-gray-500">{title}</span>
           </div>
         )}
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
-          <h3 className="text-xl font-semibold text-white text-center">{title}</h3>
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-4 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-white text-center">{title}</h3>
         </div>
       </div>
-      <div className={`absolute inset-0 bg-therapy-${colorClass} opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-center p-6`}>
-        <p className="text-white text-center">{description}</p>
+      <div className={`absolute inset-0 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center p-8 rounded-2xl`}>
+        <p className="text-white text-center text-lg leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -86,11 +105,11 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="section bg-white">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-therapy-blue">Mein Therapieangebot</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+    <section id="services" className="section bg-white py-16">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4 text-therapy-blue">Mein Therapieangebot</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Entdecken Sie meine vielfältigen Therapiemethoden für Erwachsene und Jugendliche.
           </p>
         </div>
