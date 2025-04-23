@@ -48,6 +48,7 @@ const Header = () => {
           <div className="text-lg md:text-xl font-bold">
             <Link href="/" className="hover:text-white/90 transition-colors">
               Andrea Wennecke
+              <div className="text-sm font-normal text-white/80">Körperorientierte Therapie in Lübeck</div>
             </Link>
           </div>
 

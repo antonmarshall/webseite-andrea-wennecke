@@ -26,7 +26,7 @@ const AboutCard = ({
 const AboutSection = () => {
   const aboutCards = [
     {
-      title: "Erfahrene Therapeutin",
+      title: "Therapeutin seit  über 20 Jahren",
       content: "Als Kreativtherapeutin schaffe ich einen sicheren Raum für persönliche Entdeckungen und Heilung durch Kunst und Bewegung."
     },
     {
