@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Accordion,
@@ -25,6 +24,10 @@ const FaqSection = () => {
     {
       question: "Werden die Kosten von der Krankenkasse übernommen?",
       answer: "Private Kassen übernehmen oft einen Teil der Kosten. Bei gesetzlichen Kassen ist eine Erstattung über Zusatzleistungen möglich. Sprechen Sie mich gerne an - ich berate Sie zu den Möglichkeiten."
+    },
+    {
+      question: "Was kostet eine Therapiesitzung?",
+      answer: "Eine Einzelsitzung (60 Minuten) kostet 80€. Für Gruppen- und Paartherapie gelten andere Tarife. Bei regelmäßiger Teilnahme und in besonderen Situationen sind individuelle Vereinbarungen möglich. Sprechen Sie mich gerne darauf an."
     },
     {
       question: "Brauche ich künstlerische Erfahrung?",
