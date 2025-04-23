@@ -75,9 +75,9 @@ const ContactSection = () => {
 
             <div className="mt-8">
               <CalendlyDialog>
-                <div className="w-full bg-white border border-gray-200 rounded-lg p-4 text-left cursor-pointer hover:bg-therapy-blue/5 transition-colors">
-                  <span className="text-gray-700">Termin vereinbaren</span>
-                </div>
+                <Button className="w-full bg-therapy-blue text-white hover:bg-therapy-blue-dark">
+                  Termin vereinbaren
+                </Button>
               </CalendlyDialog>
             </div>
           </div>
@@ -137,16 +137,10 @@ const ContactSection = () => {
                 ></textarea>
               </div>
             </form>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button
-                variant="outline"
-                className="w-full sm:w-auto bg-therapy-blue text-white hover:bg-therapy-blue-dark"
-              >
-                Termin vereinbaren
-              </Button>
+            <div className="mt-8">
               <Button
                 type="submit"
-                className={`w-full sm:w-auto ${
+                className={`w-full ${
                   isFormValid 
                     ? 'bg-therapy-blue text-white hover:bg-therapy-blue-dark' 
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'

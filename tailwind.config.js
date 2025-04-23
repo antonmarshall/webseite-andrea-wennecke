@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'therapy-blue': '#3B82F6', // Wärmerer Blauton
-        'therapy-blue-dark': '#2563EB',
+        'therapy-blue': '#153d64',
+        'therapy-blue-dark': '#0f2b4a',
         'therapy-orange': '#F97316',
       },
     },
