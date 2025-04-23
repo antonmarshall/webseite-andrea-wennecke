@@ -41,7 +41,7 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
       style={{ animationDelay: `${0.1 * index}s` }}
     >
       {/* Bild */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         {!imageError ? (
           <img 
             src={image} 
@@ -57,10 +57,10 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
       </div>
 
       {/* Farbiger Overlay */}
-      <div className={`absolute inset-0 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl`} />
+      <div className={`absolute inset-0 z-10 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl`} />
 
       {/* Text-Inhalt */}
-      <div className="absolute inset-0 flex flex-col p-6">
+      <div className="absolute inset-0 z-20 flex flex-col p-6">
         <div className="flex-1 flex items-center justify-center">
           <h3 className="text-2xl font-semibold text-white text-center backdrop-blur-[2px] transform transition-all duration-500 group-hover:-translate-y-8">
             {title}
