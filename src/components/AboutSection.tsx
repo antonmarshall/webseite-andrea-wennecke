@@ -12,7 +12,7 @@ const AboutCard = ({
 }) => {
   return (
     <div 
-      className="bg-white/80 backdrop-blur-sm rounded-xl p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white" 
+      className="bg-therapy-warm/80 backdrop-blur-sm rounded-xl p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-therapy-warm/90" 
       style={{ animationDelay: `${0.1 * delayIndex}s` }}
     >
       <h3 className="text-lg font-semibold mb-3 text-therapy-blue">
@@ -40,7 +40,7 @@ const AboutSection = () => {
   ];
   
   return (
-    <section id="about" className="section bg-neutral-50">
+    <section id="about" className="section bg-therapy-warm/30">
       <div className="container mx-auto max-w-6xl px-4">
         <h2 className="text-center text-3xl font-bold mb-12 text-therapy-blue">Über Mich</h2>
         <div className="flex flex-col md:flex-row gap-12 items-center">
