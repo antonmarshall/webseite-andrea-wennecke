@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface ServiceCardProps {
   title: string;
@@ -9,8 +9,11 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCardProps) => {
+  const [imageError, setImageError] = useState(false);
+
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     console.error(`Failed to load image: ${image}`, e);
+    setImageError(true);
   };
 
   return (
@@ -19,12 +22,18 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
       style={{ animationDelay: `${0.1 * index}s` }}
     >
       <div className="aspect-w-16 aspect-h-9 relative">
-        <img 
-          src={`/webseite-andrea-wennecke${image}`} 
-          alt={title}
-          className="w-full h-full object-cover"
-          onError={handleImageError}
-        />
+        {!imageError ? (
+          <img 
+            src={`/webseite-andrea-wennecke${image}`} 
+            alt={title}
+            className="w-full h-full object-cover"
+            onError={handleImageError}
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+            <span className="text-gray-500">{title}</span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
           <h3 className="text-xl font-semibold text-white text-center">{title}</h3>
         </div>
