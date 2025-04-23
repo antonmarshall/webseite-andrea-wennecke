@@ -61,7 +61,11 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
 
       {/* Text-Inhalt */}
       <div className="absolute inset-0 flex flex-col p-6">
-        <h3 className="text-2xl font-semibold text-white text-center">{title}</h3>
+        <div className="flex-1 flex items-center justify-center">
+          <h3 className="text-2xl font-semibold text-white text-center bg-black/30 px-4 py-2 rounded-lg transform transition-all duration-500 group-hover:-translate-y-8">
+            {title}
+          </h3>
+        </div>
         <div className="flex-1 flex items-center justify-center">
           <p className="text-white text-center text-lg leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 max-w-[90%]">
             {description}
