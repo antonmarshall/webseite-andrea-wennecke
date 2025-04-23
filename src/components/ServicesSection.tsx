@@ -18,16 +18,18 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
       className={`service-card relative overflow-hidden rounded-xl shadow-sm transition-all duration-300 cursor-pointer group`}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="aspect-w-16 aspect-h-9">
+      <div className="aspect-w-16 aspect-h-9 relative">
         <img 
           src={`/webseite-andrea-wennecke${image}`} 
           alt={title}
           className="w-full h-full object-cover"
           onError={handleImageError}
         />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
+          <h3 className="text-xl font-semibold text-white text-center">{title}</h3>
+        </div>
       </div>
       <div className={`absolute inset-0 bg-therapy-${colorClass} opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-center p-6`}>
-        <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
         <p className="text-white text-center">{description}</p>
       </div>
     </div>
