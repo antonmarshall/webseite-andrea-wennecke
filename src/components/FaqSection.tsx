@@ -61,7 +61,7 @@ const FaqSection = () => {
   ];
 
   return (
-    <section id="faq" className="section bg-white">
+    <section id="faq" className="section bg-therapy-warm/30">
       <div className="container mx-auto max-w-3xl">
         <h2 className="text-center text-3xl font-bold mb-10 text-therapy-blue">Häufig gestellte Fragen</h2>
         
@@ -70,7 +70,7 @@ const FaqSection = () => {
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className={`mb-4 border border-gray-200 rounded-lg overflow-hidden bg-white/90 backdrop-blur-sm transition-all duration-300 ${getHoverColor(faq.colorClass)}`}
+              className={`mb-4 border border-gray-200 rounded-lg overflow-hidden bg-therapy-warm/80 backdrop-blur-sm transition-all duration-300 ${getHoverColor(faq.colorClass)}`}
             >
               <AccordionTrigger 
                 className={`px-6 py-4 hover:no-underline ${getHoverColor(faq.colorClass)} text-left font-medium text-therapy-blue`}

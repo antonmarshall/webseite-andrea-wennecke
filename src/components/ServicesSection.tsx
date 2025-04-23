@@ -117,7 +117,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="section bg-white py-16">
+    <section id="services" className="section bg-therapy-warm/30 py-16">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-therapy-blue">Mein Therapieangebot</h2>
