@@ -50,37 +50,37 @@ const ServicesSection = () => {
     {
       title: "Kunsttherapie",
       description: "Durch freies Malen, Formen und kreative Materialien Zugang zu Emotionen finden.",
-      image: "/images/kunsttherapie.jpg",
+      image: "/webseite-andrea-wennecke/images/kunsttherapie.jpg",
       colorClass: "creative",
     },
     {
       title: "Körperorientierte Psychotherapie",
       description: "Verbindung von Körper und Psyche zur ganzheitlichen Wohlbefinden.",
-      image: "/images/Körperorientierte Psychotherapie.jpg",
+      image: "/webseite-andrea-wennecke/images/Körperorientierte Psychotherapie.jpg",
       colorClass: "body",
     },
     {
       title: "Ausdruckstherapie",
       description: "Verschiedene kreative Ausdrucksformen nutzen, um Emotionen zu verarbeiten und neue Perspektiven zu gewinnen.",
-      image: "/images/Ausdruckstherapie.jpg",
+      image: "/webseite-andrea-wennecke/images/Ausdruckstherapie.jpg",
       colorClass: "expression",
     },
     {
       title: "Traumatherapie",
       description: "Behutsame Bearbeitung traumatischer Erfahrungen durch kreative und körperorientierte Methoden.",
-      image: "/images/psychotrauma.jpg",
+      image: "/webseite-andrea-wennecke/images/psychotrauma.jpg",
       colorClass: "healing",
     },
     {
       title: "Einzeltherapie",
       description: "Individuell zugeschnittene Begleitung für persönliche Veränderungswünsche und Entwicklungsziele.",
-      image: "/images/einzeltherapie.jpg",
+      image: "/webseite-andrea-wennecke/images/einzeltherapie.jpg",
       colorClass: "individual",
     },
     {
       title: "Gruppentherapie",
       description: "In kleinen Gruppen verschiedene Formen und gemeinsam kreative Lösungswege erarbeiten.",
-      image: "/images/Gruppentherapie.jpg",
+      image: "/webseite-andrea-wennecke/images/Gruppentherapie.jpg",
       colorClass: "group",
     },
   ];
