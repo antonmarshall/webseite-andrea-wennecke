@@ -46,18 +46,18 @@ const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCa
           <img 
             src={image} 
             alt={title}
-            className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             onError={handleImageError}
           />
         ) : (
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-2xl">
+          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
             <span className="text-gray-500">{title}</span>
           </div>
         )}
       </div>
 
       {/* Farbiger Overlay */}
-      <div className={`absolute inset-0 z-10 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl`} />
+      <div className={`absolute inset-0 z-10 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-all duration-500`} />
 
       {/* Text-Inhalt */}
       <div className="absolute inset-0 z-20 flex flex-col p-6">
