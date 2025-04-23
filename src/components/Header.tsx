@@ -37,7 +37,8 @@ const Header = () => {
     { id: 'about', label: 'Über mich' },
     { id: 'services', label: 'Therapieangebote' },
     { id: 'faq', label: 'FAQ' },
-    { id: 'contact', label: 'Kontakt' }
+    { id: 'contact', label: 'Kontakt' },
+    { id: 'location', label: 'Anreise' }
   ];
 
   return (

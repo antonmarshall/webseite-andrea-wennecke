@@ -14,24 +14,24 @@ interface FaqItem {
 const FaqSection = () => {
   const faqs: FaqItem[] = [
     {
-      question: "Wie läuft eine Therapiesitzung ab?",
-      answer: "Wir starten mit einem kurzen Gespräch über Ihr Befinden. Dann nutzen wir kreative Methoden wie Malen oder Bewegung, je nachdem, was für Sie stimmig ist. Am Ende reflektieren wir gemeinsam die Erfahrungen."
-    },
-    {
       question: "Für wen eignet sich Kreativtherapie?",
       answer: "Kreativtherapie ist für alle da - egal ob jung oder alt. Sie brauchen keine künstlerischen Vorkenntnisse. Der Weg und das Erleben stehen im Mittelpunkt, nicht das Ergebnis."
     },
     {
-      question: "Werden die Kosten von der Krankenkasse übernommen?",
-      answer: "Private Kassen übernehmen oft einen Teil der Kosten. Bei gesetzlichen Kassen ist eine Erstattung über Zusatzleistungen möglich. Sprechen Sie mich gerne an - ich berate Sie zu den Möglichkeiten."
+      question: "Brauche ich künstlerische Erfahrung?",
+      answer: "Nein, keinerlei Vorkenntnisse nötig. Es geht um Ihren persönlichen Ausdruck und darum, was die kreativen Prozesse in Ihnen bewegen - nicht um künstlerische Leistung."
+    },
+    {
+      question: "Wie läuft eine Therapiesitzung ab?",
+      answer: "Wir starten mit einem kurzen Gespräch über Ihr Befinden. Dann nutzen wir kreative Methoden wie Malen oder Bewegung, je nachdem, was für Sie stimmig ist. Am Ende reflektieren wir gemeinsam die Erfahrungen."
     },
     {
       question: "Was kostet eine Therapiesitzung?",
       answer: "Eine Einzelsitzung (60 Minuten) kostet 120€. Eine Gruppensitzung kostet 200€. Bei regelmäßiger Teilnahme und in besonderen Situationen sind individuelle Vereinbarungen möglich. Sprechen Sie mich gerne darauf an."
     },
     {
-      question: "Brauche ich künstlerische Erfahrung?",
-      answer: "Nein, keinerlei Vorkenntnisse nötig. Es geht um Ihren persönlichen Ausdruck und darum, was die kreativen Prozesse in Ihnen bewegen - nicht um künstlerische Leistung."
+      question: "Werden die Kosten von der Krankenkasse übernommen?",
+      answer: "Private Kassen übernehmen oft einen Teil der Kosten. Bei gesetzlichen Kassen ist eine Erstattung über Zusatzleistungen möglich. Sprechen Sie mich gerne an - ich berate Sie zu den Möglichkeiten."
     },
   ];
 

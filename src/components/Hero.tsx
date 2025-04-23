@@ -24,13 +24,6 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <CalendlyDialog>
-              <Button 
-                className="bg-therapy-blue hover:bg-therapy-blue/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
-              >
-                Termin vereinbaren
-              </Button>
-            </CalendlyDialog>
             <Link href="#services">
               <Button
                 variant="outline"
@@ -39,6 +32,13 @@ const Hero = () => {
                 Therapieangebote
               </Button>
             </Link>
+            <CalendlyDialog>
+              <Button 
+                className="bg-therapy-blue hover:bg-therapy-blue/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
+              >
+                Termin vereinbaren
+              </Button>
+            </CalendlyDialog>
           </div>
         </div>
       </div>
