@@ -45,10 +45,10 @@ const FaqSection = () => {
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="mb-4 border border-gray-200 rounded-lg overflow-hidden bg-white/90 backdrop-blur-sm transition-all duration-300 hover:bg-therapy-beige/20"
+              className="mb-4 border border-gray-200 rounded-lg overflow-hidden bg-card-warm/90 backdrop-blur-sm transition-all duration-300 hover:bg-card-warm"
             >
               <AccordionTrigger 
-                className="px-6 py-4 hover:no-underline hover:bg-therapy-beige/30 text-left font-medium text-therapy-blue"
+                className="px-6 py-4 hover:no-underline hover:bg-card-warm text-left font-medium text-therapy-blue"
               >
                 {faq.question}
               </AccordionTrigger>
