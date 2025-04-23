@@ -1,75 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface ServiceCardProps {
   title: string;
   description: string;
   image: string;
   colorClass: string;
-  index: number;
 }
 
-const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCardProps) => {
-  const [imageError, setImageError] = useState(false);
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    console.error(`Failed to load image: ${image}`, e);
-    setImageError(true);
-  };
-
-  const getHoverColor = (colorClass: string) => {
-    switch (colorClass) {
-      case 'creative':
-        return 'bg-moss-green/80'; // Moosgrün
-      case 'body':
-        return 'bg-curry-yellow/80'; // Curry Gelb
-      case 'expression':
-        return 'bg-soft-blue/80'; // Sanftes Blau
-      case 'healing':
-        return 'bg-warm-purple/80'; // Warmes Lila
-      case 'individual':
-        return 'bg-coral-pink/80'; // Korallenrosa
-      case 'group':
-        return 'bg-sage-green/80'; // Salbeigrün
-      default:
-        return 'bg-gray-600/80';
-    }
-  };
-
+const ServiceCard = ({ title, description, image, colorClass }: ServiceCardProps) => {
   return (
-    <div 
-      className="service-card relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer h-[400px] group"
-      style={{ animationDelay: `${0.1 * index}s` }}
-    >
-      {/* Bild */}
-      <div className="absolute inset-0">
-        {!imageError ? (
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
-            onError={handleImageError}
-          />
-        ) : (
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-2xl">
-            <span className="text-gray-500">{title}</span>
+    <div className="bg-therapy-sand-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+      <div className="relative h-48">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/webseite-andrea-wennecke/images/placeholder.jpg';
+          }}
+        />
+        <div className={`absolute inset-0 ${colorClass} opacity-0 hover:opacity-90 transition-opacity duration-300 flex items-center justify-center`}>
+          <div className="text-white p-6">
+            <h3 className="text-xl font-semibold mb-3">{title}</h3>
+            <p className="text-sm">{description}</p>
           </div>
-        )}
-      </div>
-
-      {/* Farbiger Overlay */}
-      <div className={`absolute inset-0 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl`} />
-
-      {/* Text-Inhalt */}
-      <div className="absolute inset-0 flex flex-col p-6">
-        <div className="flex-1 flex items-center justify-center">
-          <h3 className="text-2xl font-semibold text-white text-center backdrop-blur-[2px] transform transition-all duration-500 group-hover:-translate-y-8">
-            {title}
-          </h3>
-        </div>
-        <div className="flex-1 flex items-center justify-center">
-          <p className="text-white text-center text-lg leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 max-w-[90%]">
-            {description}
-          </p>
         </div>
       </div>
     </div>
@@ -80,51 +35,46 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Kunsttherapie",
-      description: "Durch freies Malen, Formen und kreative Materialien Zugang zu Emotionen finden.",
+      description: "Entdecken Sie Ihre kreative Seite und finden Sie neue Wege der Selbstexpression.",
       image: "/webseite-andrea-wennecke/images/kunsttherapie.jpg",
-      colorClass: "creative",
+      colorClass: "bg-moss-green/90"
     },
     {
       title: "Körperorientierte Psychotherapie",
-      description: "Verbindung von Körper und Psyche zur ganzheitlichen Wohlbefinden.",
-      image: "/webseite-andrea-wennecke/images/Körperorientierte Psychotherapie.jpg",
-      colorClass: "body",
+      description: "Lernen Sie, Ihren Körper als Ressource für Heilung und Entwicklung zu nutzen.",
+      image: "/webseite-andrea-wennecke/images/koerperorientierte-psychotherapie.jpg",
+      colorClass: "bg-terracotta/90"
     },
     {
       title: "Ausdruckstherapie",
-      description: "Verschiedene kreative Ausdrucksformen nutzen, um Emotionen zu verarbeiten und neue Perspektiven zu gewinnen.",
-      image: "/webseite-andrea-wennecke/images/Ausdruckstherapie.jpg",
-      colorClass: "expression",
+      description: "Finden Sie Ihren persönlichen Ausdruck durch verschiedene künstlerische Medien.",
+      image: "/webseite-andrea-wennecke/images/ausdruckstherapie.jpg",
+      colorClass: "bg-sage-green/90"
     },
     {
       title: "Traumatherapie",
-      description: "Behutsame Bearbeitung traumatischer Erfahrungen durch kreative und körperorientierte Methoden.",
-      image: "/webseite-andrea-wennecke/images/psychotrauma.jpg",
-      colorClass: "healing",
+      description: "Begleiten Sie den Prozess der Traumaverarbeitung in einem sicheren Rahmen.",
+      image: "/webseite-andrea-wennecke/images/traumatherapie.jpg",
+      colorClass: "bg-sand/90"
     },
     {
       title: "Einzeltherapie",
-      description: "Individuell zugeschnittene Begleitung für persönliche Veränderungswünsche und Entwicklungsziele.",
+      description: "Individuelle Begleitung für Ihre persönliche Entwicklung und Heilung.",
       image: "/webseite-andrea-wennecke/images/einzeltherapie.jpg",
-      colorClass: "individual",
+      colorClass: "bg-warm-gray/90"
     },
     {
       title: "Gruppentherapie",
-      description: "In kleinen Gruppen verschiedene Formen und gemeinsam kreative Lösungswege erarbeiten.",
-      image: "/webseite-andrea-wennecke/images/Gruppentherapie.jpg",
-      colorClass: "group",
-    },
+      description: "Gemeinsame Erfahrungen und Unterstützung in der Gruppe.",
+      image: "/webseite-andrea-wennecke/images/gruppentherapie.jpg",
+      colorClass: "bg-cool-gray/90"
+    }
   ];
 
   return (
-    <section id="services" className="section bg-therapy-warm/30 py-16">
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-therapy-blue">Mein Therapieangebot</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Entdecken Sie meine vielfältigen Therapiemethoden für Erwachsene und Jugendliche.
-          </p>
-        </div>
+    <section id="services" className="section bg-therapy-warm/30">
+      <div className="container mx-auto max-w-6xl px-4">
+        <h2 className="text-center text-3xl font-bold mb-12 text-therapy-blue">Therapieangebote</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard
@@ -133,7 +83,6 @@ const ServicesSection = () => {
               description={service.description}
               image={service.image}
               colorClass={service.colorClass}
-              index={index}
             />
           ))}
         </div>

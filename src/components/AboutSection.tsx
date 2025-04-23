@@ -12,7 +12,7 @@ const AboutCard = ({
 }) => {
   return (
     <div 
-      className="bg-therapy-warm/80 backdrop-blur-sm rounded-xl p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-therapy-warm/90" 
+      className="bg-therapy-cream-light backdrop-blur-sm rounded-xl p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-therapy-cream" 
       style={{ animationDelay: `${0.1 * delayIndex}s` }}
     >
       <h3 className="text-lg font-semibold mb-3 text-therapy-blue">

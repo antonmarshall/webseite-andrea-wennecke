@@ -62,19 +62,27 @@ const FaqSection = () => {
 
   return (
     <section id="faq" className="section bg-therapy-warm/30">
-      <div className="container mx-auto max-w-4xl px-4">
-        <h2 className="text-center text-3xl font-bold mb-12 text-therapy-blue">Häufig gestellte Fragen</h2>
-        <div className="space-y-4">
+      <div className="container mx-auto max-w-3xl">
+        <h2 className="text-center text-3xl font-bold mb-10 text-therapy-blue">Häufig gestellte Fragen</h2>
+        
+        <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-therapy-warm/80 backdrop-blur-sm rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-therapy-warm/90"
+            <AccordionItem 
+              key={index} 
+              value={`item-${index}`}
+              className={`mb-4 border border-gray-200 rounded-lg overflow-hidden bg-therapy-warm/80 backdrop-blur-sm transition-all duration-300 ${getHoverColor(faq.colorClass)}`}
             >
-              <h3 className="text-lg font-semibold mb-3 text-therapy-blue">{faq.question}</h3>
-              <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-            </div>
+              <AccordionTrigger 
+                className={`px-6 py-4 hover:no-underline ${getHoverColor(faq.colorClass)} text-left font-medium text-therapy-blue`}
+              >
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="px-6 py-4 text-gray-600">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
