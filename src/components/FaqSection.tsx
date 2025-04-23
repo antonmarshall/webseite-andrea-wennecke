@@ -52,7 +52,7 @@ const FaqSection = () => {
               >
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="px-6 py-4 text-gray-600">
+              <AccordionContent className="px-6 py-4 text-gray-600 bg-white/50">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
