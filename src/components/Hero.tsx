@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="relative bg-gradient-to-b from-therapy-orange/20 to-transparent pt-16 pb-20 md:pt-20 md:pb-28 px-4">
       <div 
-        className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843')] bg-cover bg-center"
+        className="absolute inset-0 z-0 opacity-20 bg-[url('/webseite-andrea-wennecke/images/hero-image.jpg')] bg-cover bg-center"
         style={{ filter: 'saturate(0.8)' }}
       />
       <div className="container mx-auto max-w-5xl relative z-10">
