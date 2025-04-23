@@ -32,7 +32,7 @@ const ContactSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-white p-8 rounded-xl shadow-md flex flex-col min-h-[500px]">
+          <div className="bg-white p-8 rounded-xl shadow-md flex flex-col min-h-[500px] bg-linen">
             <h3 className="text-xl font-semibold mb-6 text-therapy-blue">Kontaktinformationen</h3>
             
             <div className="space-y-6 flex-grow">
@@ -82,7 +82,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-md flex flex-col min-h-[500px]">
+          <div className="bg-white p-8 rounded-xl shadow-md flex flex-col min-h-[500px] bg-linen">
             <h3 className="text-xl font-semibold mb-6 text-therapy-blue">Schreiben Sie mir</h3>
             <form className="space-y-4 flex-grow">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
