@@ -40,7 +40,7 @@ const AboutSection = () => {
   ];
   
   return (
-    <section id="about" className="section bg-neutral-50">
+    <section id="about" className="section bg-sand">
       <div className="container mx-auto max-w-6xl px-4">
         <h2 className="text-center text-3xl font-bold mb-12 text-therapy-blue">Über Mich</h2>
         <div className="flex flex-col md:flex-row gap-12 items-center">

@@ -1,9 +1,8 @@
-
 import React from 'react';
 
 const LocationSection = () => {
   return (
-    <section id="location" className="section bg-white">
+    <section id="location" className="section bg-sand">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-therapy-blue">Anfahrt</h2>
