@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-therapy-blue mb-6">
-            Kunsttherapeutische Praxis
+            Praxis für Psychotherapie & Kunsttherapie
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-12">
             Herzlich willkommen in meiner kunsttherapeutischen Praxis in Hannover. 

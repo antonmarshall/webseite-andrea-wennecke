@@ -12,7 +12,7 @@ const timelineItems: TimelineItem[] = [
   {
     year: "2020 - heute",
     title: "Eigene Praxis",
-    description: "Praxis für Psychotherapie und Kunsttherapie in Lübeck"
+    description: "Praxis für Psychotherapie & Kunsttherapie in Lübeck"
   },
   {
     year: "2015 - 2020",

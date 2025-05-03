@@ -16,7 +16,7 @@ const Hero = () => {
             Andrea Wennecke
           </h1>
           <h2 className="text-xl md:text-2xl font-semibold text-gray-600 mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            Kreativtherapie in Lübeck
+            Praxis für Psychotherapie & Kunsttherapie
           </h2>
           
           <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-lg animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
