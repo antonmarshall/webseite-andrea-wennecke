@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hand } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutCard = ({ 
   title, 
@@ -66,6 +67,14 @@ const AboutSection = () => {
                   delayIndex={index + 1}
                 />
               ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Link 
+                to="/werdegang"
+                className="inline-block px-6 py-3 bg-therapy-blue text-white rounded-lg hover:bg-therapy-blue/90 transition-colors"
+              >
+                Zu meinem Werdegang
+              </Link>
             </div>
           </div>
         </div>

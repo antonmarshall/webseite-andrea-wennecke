@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import NotFound from "./pages/NotFound";
+import Werdegang from './pages/Werdegang';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <BrowserRouter basename="/webseite-andrea-wennecke">
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/werdegang" element={<Werdegang />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
