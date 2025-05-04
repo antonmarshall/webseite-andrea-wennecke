@@ -9,8 +9,12 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "go": "git add . && git commit -m \"Update website\" && git push && npm run build",
-    "deploy": "npm run build && git add . && git commit -m \"Deploy to GitHub Pages\" && git push && echo \"Deployment complete! Please check your GitHub Pages settings at https://github.com/antonmarshall/webseite-andrea-wennecke/settings/pages\""
+    "add": "git add .",
+    "commit": "git commit -m \"Update website\" || true",
+    "push": "git push || true",
+    "build:prod": "npm run build",
+    "deploy": "npm run build && git add . && git commit -m \"Deploy to GitHub Pages\" && git push",
+    "go": "npm run add && npm run commit && npm run push && npm run build:prod && npm run deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
