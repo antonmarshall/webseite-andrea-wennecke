@@ -10,7 +10,7 @@ const HeroSection = () => {
             Praxis für Psychotherapie & Kunsttherapie
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-12">
-            Herzlich willkommen in meiner kunsttherapeutischen Praxis in Hannover. 
+            Herzlich willkommen in der Praxis von Andrea Wennecke in Lübeck. 
             Hier finden Sie einen geschützten Raum für Ihre persönliche Entwicklung und Heilung.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">

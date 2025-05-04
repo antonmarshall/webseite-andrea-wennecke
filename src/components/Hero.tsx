@@ -13,10 +13,10 @@ const Hero = () => {
       <div className="container mx-auto max-w-5xl relative z-10">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-therapy-blue animate-fade-in">
-            Andrea Wennecke
+            Praxis für Psychotherapie & Kunsttherapie
           </h1>
           <h2 className="text-xl md:text-2xl font-semibold text-gray-600 mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            Praxis für Psychotherapie & Kunsttherapie
+            Andrea Wennecke
           </h2>
           
           <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-lg animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
