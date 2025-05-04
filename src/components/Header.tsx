@@ -47,6 +47,9 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="text-lg md:text-xl font-bold">
             <Link href="/" className="hover:text-white/90 transition-colors">
+              <div className="text-sm font-semibold text-white">Praxis für</div>
+              <div className="text-sm font-semibold text-white">Psychotherapie & Kunsttherapie</div>
+              <div className="text-xs font-normal text-white/80">Andrea Wennecke</div>
             </Link>
           </div>
 
