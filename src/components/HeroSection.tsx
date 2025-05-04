@@ -9,6 +9,9 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-therapy-blue mb-6">
             Praxis für Psychotherapie & Kunsttherapie
           </h1>
+          <h2 className="text-2xl md:text-3xl text-gray-600 mb-4">
+            Andrea Wennecke
+          </h2>
           <p className="text-xl md:text-2xl text-gray-600 mb-12">
             Herzlich willkommen in der Praxis von Andrea Wennecke in Lübeck. 
             Hier finden Sie einen geschützten Raum für Ihre persönliche Entwicklung und Heilung.

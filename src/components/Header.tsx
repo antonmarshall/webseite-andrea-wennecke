@@ -34,8 +34,8 @@ const Header = () => {
   const isActive = (section: string) => activeSection === section;
 
   const navItems = [
-    { id: 'about', label: 'Über mich' },
     { id: 'services', label: 'Therapieangebote' },
+    { id: 'about', label: 'Über mich' },
     { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Kontakt' },
     { id: 'location', label: 'Anreise' }
@@ -47,8 +47,8 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="text-lg md:text-xl font-bold">
             <Link href="/" className="hover:text-white/90 transition-colors">
-              Andrea Wennecke
-              <div className="text-sm font-normal text-white/80 font-serif">Praxis für Psychotherapie & Kunsttherapie</div>
+              <div className="text-base font-semibold text-white font-serif">Praxis für Psychotherapie & Kunsttherapie</div>
+              <div className="text-sm font-normal text-white/80">Andrea Wennecke</div>
             </Link>
           </div>
 
