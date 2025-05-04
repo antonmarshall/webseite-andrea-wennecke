@@ -15,9 +15,6 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-therapy-blue animate-fade-in">
             Praxis für Psychotherapie & Kunsttherapie
           </h1>
-          <h2 className="text-xl md:text-2xl font-semibold text-gray-600 mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            Andrea Wennecke
-          </h2>
           
           <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-lg animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
             Körperorientierte Therapie für Erwachsene und Jugendliche in einem geschützten Raum.
