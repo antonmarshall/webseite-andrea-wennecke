@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { CalendlyDialog } from '@/components/CalendlyDialog';
 import { Link } from '@/components/ui/link';
 
 const Hero = () => {
@@ -28,13 +29,13 @@ const Hero = () => {
                 Therapieangebote
               </Button>
             </Link>
-            <Link href="#contact">
+            <CalendlyDialog>
               <Button 
                 className="bg-therapy-blue hover:bg-therapy-blue/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
               >
                 Kontakt aufnehmen
               </Button>
-            </Link>
+            </CalendlyDialog>
           </div>
         </div>
       </div>
