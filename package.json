@@ -13,7 +13,7 @@
     "commit": "git commit -m \"Update website\" || true",
     "push": "git push || true",
     "build:prod": "npm run build || true",
-    "deploy": "npm run build && git add . && git commit -m \"Deploy to GitHub Pages\" && git push || true",
+    "deploy": "npm run build && git add . && (git diff --staged --quiet || git commit -m \"Deploy to GitHub Pages\") && git push",
     "go": "npm run add && npm run commit && npm run push && npm run build:prod && npm run deploy"
   },
   "dependencies": {
