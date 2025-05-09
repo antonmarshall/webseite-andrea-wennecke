@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPalette, FaHeartbeat, FaTheaterMasks, FaHandHoldingHeart, FaUser, FaUsers } from 'react-icons/fa';
+import { FaPalette, FaHeartbeat, FaTheaterMasks, FaHandHoldingHeart, FaChild, FaUsers, FaChalkboardTeacher } from 'react-icons/fa';
 
 interface ServiceCardProps {
   title: string;
@@ -12,17 +12,17 @@ interface ServiceCardProps {
 const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCardProps) => {
   const getBackgroundColor = (colorClass: string) => {
     switch (colorClass) {
-      case 'creative':
-        return 'bg-[#FF6B6B] hover:bg-[#FF5252]'; // Warm Red
-      case 'body':
-        return 'bg-[#4ECDC4] hover:bg-[#45B7AF]'; // Turquoise
       case 'expression':
+        return 'bg-[#FF6B6B] hover:bg-[#FF5252]'; // Warm Red
+      case 'art':
+        return 'bg-[#4ECDC4] hover:bg-[#45B7AF]'; // Turquoise
+      case 'trauma':
         return 'bg-[#FFD93D] hover:bg-[#FFC107]'; // Bright Yellow
-      case 'healing':
+      case 'youth':
         return 'bg-[#95E1D3] hover:bg-[#7DCDC0]'; // Mint Green
-      case 'individual':
+      case 'supervision':
         return 'bg-[#FF8B94] hover:bg-[#FF7680]'; // Soft Pink
-      case 'group':
+      case 'training':
         return 'bg-[#A8E6CF] hover:bg-[#8CD3B7]'; // Light Green
       default:
         return 'bg-gray-600 hover:bg-gray-700';
@@ -59,40 +59,40 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
 const ServicesSection = () => {
   const services = [
     {
-      title: "Kunsttherapie",
-      description: "Durch freies Malen, Formen und kreative Materialien Zugang zu Emotionen finden.",
-      icon: <FaPalette />,
-      colorClass: "creative",
-    },
-    {
-      title: "Körperorientierte Psychotherapie",
-      description: "Verbindung von Körper und Psyche zur ganzheitlichen Wohlbefinden.",
-      icon: <FaHeartbeat />,
-      colorClass: "body",
-    },
-    {
-      title: "Ausdruckstherapie",
-      description: "Verschiedene kreative Ausdrucksformen nutzen, um Emotionen zu verarbeiten und neue Perspektiven zu gewinnen.",
+      title: "Ausdrucksorientierte Psychotherapie",
+      description: "Durch kreative Ausdrucksformen und körperorientierte Methoden Zugang zu Emotionen finden und verarbeiten.",
       icon: <FaTheaterMasks />,
       colorClass: "expression",
+    },
+    {
+      title: "Kunsttherapie",
+      description: "Freies Malen, Formen und kreative Materialien als therapeutische Werkzeuge zur Selbsterfahrung und Heilung.",
+      icon: <FaPalette />,
+      colorClass: "art",
     },
     {
       title: "Traumatherapie",
       description: "Behutsame Bearbeitung traumatischer Erfahrungen durch kreative und körperorientierte Methoden.",
       icon: <FaHandHoldingHeart />,
-      colorClass: "healing",
+      colorClass: "trauma",
     },
     {
-      title: "Einzeltherapie",
-      description: "Individuell zugeschnittene Begleitung für persönliche Veränderungswünsche und Entwicklungsziele.",
-      icon: <FaUser />,
-      colorClass: "individual",
+      title: "Kinder & Jugendliche",
+      description: "Speziell auf die Bedürfnisse von Kindern und Jugendlichen abgestimmte therapeutische Begleitung.",
+      icon: <FaChild />,
+      colorClass: "youth",
     },
     {
-      title: "Gruppentherapie",
-      description: "In kleinen Gruppen verschiedene Formen und gemeinsam kreative Lösungswege erarbeiten.",
+      title: "Supervision",
+      description: "Professionelle Beratung und Reflexion für Fachkräfte aus therapeutischen und pädagogischen Berufen.",
       icon: <FaUsers />,
-      colorClass: "group",
+      colorClass: "supervision",
+    },
+    {
+      title: "Weiterbildung",
+      description: "Fachliche Fortbildung und Qualifizierung in kreativen und körperorientierten Therapiemethoden.",
+      icon: <FaChalkboardTeacher />,
+      colorClass: "training",
     },
   ];
 
