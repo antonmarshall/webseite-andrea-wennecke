@@ -67,11 +67,6 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            <Link href="#contact" className="transition-colors duration-200">
-              <Button className="bg-white text-therapy-blue hover:bg-white/90">
-                Kontakt aufnehmen
-              </Button>
-            </Link>
           </nav>
 
           <Button 
@@ -109,11 +104,6 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Link href="#contact" onClick={toggleMenu} className="transition-colors duration-200">
-                <Button className="w-full bg-white text-therapy-blue hover:bg-white/90">
-                  Kontakt aufnehmen
-                </Button>
-              </Link>
             </nav>
           </div>
         )}
