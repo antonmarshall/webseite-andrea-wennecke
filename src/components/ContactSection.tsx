@@ -27,7 +27,7 @@ const ContactSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-therapy-blue">Kontakt</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Haben Sie Fragen oder möchten Sie einen Termin vereinbaren? Kontaktieren Sie mich gerne.
+            Haben Sie noch Fragen zu meinem Therapieangebot? Rufen Sie mich gerne an oder wählen Sie einen passenden Zeitpunkt für ein kurzes Telefonat.
           </p>
         </div>
 
