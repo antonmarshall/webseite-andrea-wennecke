@@ -23,14 +23,14 @@ const Hero = () => {
             <Link href="#services">
               <Button
                 variant="outline"
-                className="border-warm-purple text-warm-purple hover:bg-warm-purple/10 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
+                className="border-soft-blue text-soft-blue hover:bg-soft-blue/10 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
               >
                 Therapieangebote
               </Button>
             </Link>
             <Link href="#contact">
               <Button 
-                className="bg-curry-yellow hover:bg-curry-yellow/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
+                className="bg-soft-blue hover:bg-soft-blue/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
               >
                 Kontakt aufnehmen
               </Button>
