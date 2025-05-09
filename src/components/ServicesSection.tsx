@@ -31,26 +31,17 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
 
   return (
     <div 
-      className={`relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer h-[400px] group ${getBackgroundColor(colorClass)}`}
-      style={{ 
-        opacity: 0,
-        animation: `fadeIn 0.5s ease-out ${index * 0.1}s forwards`
-      }}
+      className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
+        colorClass ? `border-t-4 border-${colorClass}` : ''
+      }`}
+      style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="absolute inset-0 flex flex-col p-6">
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-white text-6xl transform transition-all duration-500 group-hover:scale-110">
-            {icon}
-          </div>
+      <div className="p-6">
+        <div className={`text-3xl mb-4 text-${colorClass}`}>
+          {icon}
         </div>
-        <div className="flex-1 flex flex-col items-center justify-center">
-          <h3 className="text-2xl font-semibold text-white text-center mb-4 transform transition-all duration-500 group-hover:-translate-y-2">
-            {title}
-          </h3>
-          <p className="text-white text-center text-lg leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 max-w-[90%]">
-            {description}
-          </p>
-        </div>
+        <h3 className="text-xl font-semibold mb-3 text-therapy-blue">{title}</h3>
+        <p className="text-gray-600">{description}</p>
       </div>
     </div>
   );
@@ -99,13 +90,13 @@ const ServicesSection = () => {
   return (
     <section id="services" className="section py-16">
       <div className="container mx-auto max-w-7xl px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-therapy-blue">Mein Therapieangebot</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Entdecken Sie meine vielfältigen Therapiemethoden für Erwachsene und Jugendliche.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
