@@ -23,7 +23,7 @@ const Hero = () => {
             <Link href="#services">
               <Button
                 variant="outline"
-                className="border-moss-green text-moss-green hover:bg-moss-green/10 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
+                className="border-warm-purple text-warm-purple hover:bg-warm-purple/10 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
               >
                 Therapieangebote
               </Button>

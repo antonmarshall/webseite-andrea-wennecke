@@ -42,7 +42,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 bg-moss-green/95 text-white z-50 shadow-md">
+    <header className="sticky top-0 bg-soft-blue/95 text-white z-50 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="text-lg md:text-xl font-bold">
@@ -58,10 +58,10 @@ const Header = () => {
               <Link
                 key={item.id}
                 href={`#${item.id}`}
-                className={`transition-colors duration-200 py-1 border-b-2 ${
+                className={`transition-colors duration-200 py-1 px-3 rounded-lg ${
                   isActive(item.id) 
-                    ? 'border-white text-white' 
-                    : 'border-transparent text-white/80 hover:text-white hover:border-white/50'
+                    ? 'bg-white/20 text-white' 
+                    : 'text-white/80 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {item.label}
@@ -81,7 +81,7 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 bg-moss-green z-50 animate-fade-in">
+          <div className="md:hidden fixed inset-0 bg-soft-blue z-50 animate-fade-in">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center border-b border-white/10">
               <div className="text-xl font-bold">Andrea Wennecke</div>
               <Button 
@@ -98,7 +98,11 @@ const Header = () => {
                 <Link
                   key={item.id}
                   href={`#${item.id}`}
-                  className="py-3 px-4 text-lg text-white/90 hover:bg-white/10 rounded-lg transition-colors"
+                  className={`py-3 px-4 text-lg rounded-lg transition-colors ${
+                    isActive(item.id)
+                      ? 'bg-white/20 text-white'
+                      : 'text-white/80 hover:text-white hover:bg-white/10'
+                  }`}
                   onClick={toggleMenu}
                 >
                   {item.label}

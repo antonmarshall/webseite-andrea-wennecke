@@ -13,11 +13,11 @@ export default {
         'card-warm': '#F8F4F0',
         // Service card colors
         'moss-green': '#8B9A7D',
-        'curry-yellow': '#D4A373',
-        'soft-blue': '#6B8EAF',
-        'warm-purple': '#9B7C7C',
-        'coral-pink': '#E6A4A4',
-        'sage-green': '#A8B8A8',
+        'curry-yellow': '#C78C4A',
+        'soft-blue': '#6F8FBF',
+        'warm-purple': '#A06A6A',
+        'coral-pink': '#E68C8C',
+        'sage-green': '#96A896',
       },
       backgroundImage: {
         'linen': "url('/images/linen-texture.svg')",
