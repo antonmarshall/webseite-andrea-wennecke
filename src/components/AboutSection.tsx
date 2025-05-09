@@ -1,6 +1,8 @@
 import React from 'react';
 import { Hand } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { CalendlyDialog } from '@/components/CalendlyDialog';
 
 const AboutCard = ({ 
   title, 
@@ -69,12 +71,11 @@ const AboutSection = () => {
               ))}
             </div>
             <div className="mt-8 text-center">
-              <Link 
-                to="/werdegang"
-                className="inline-block px-6 py-3 bg-therapy-blue text-white rounded-lg hover:bg-therapy-blue/90 transition-colors"
-              >
-                Zu meinem Werdegang
-              </Link>
+              <CalendlyDialog>
+                <Button className="w-full bg-soft-blue text-white hover:bg-soft-blue/90">
+                  Kostenloses Telefonat vereinbaren
+                </Button>
+              </CalendlyDialog>
             </div>
           </div>
         </div>
