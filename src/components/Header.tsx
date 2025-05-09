@@ -42,7 +42,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 bg-therapy-blue/95 text-white z-50 shadow-md">
+    <header className="sticky top-0 bg-soft-blue/95 text-white z-50 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="text-lg md:text-xl font-bold">
@@ -60,8 +60,8 @@ const Header = () => {
                 href={`#${item.id}`}
                 className={`transition-colors duration-200 py-1 border-b-2 ${
                   isActive(item.id) 
-                    ? 'border-white text-white' 
-                    : 'border-transparent text-white/80 hover:text-white hover:border-white/50'
+                    ? 'border-curry-yellow text-white' 
+                    : 'border-transparent text-white/80 hover:text-white hover:border-curry-yellow/50'
                 }`}
               >
                 {item.label}
@@ -72,7 +72,7 @@ const Header = () => {
           <Button 
             variant="ghost" 
             size="icon"
-            className="md:hidden text-white hover:bg-white/10"
+            className="md:hidden text-white hover:bg-curry-yellow/20"
             onClick={toggleMenu}
             aria-label="Menu"
           >
@@ -81,13 +81,13 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 bg-therapy-blue z-50 animate-fade-in">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center border-b border-white/10">
+          <div className="md:hidden fixed inset-0 bg-soft-blue z-50 animate-fade-in">
+            <div className="container mx-auto px-4 py-4 flex justify-between items-center border-b border-curry-yellow/20">
               <div className="text-xl font-bold">Andrea Wennecke</div>
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="text-white hover:bg-white/10"
+                className="text-white hover:bg-curry-yellow/20"
                 onClick={toggleMenu}
               >
                 <X size={24} />
@@ -98,7 +98,7 @@ const Header = () => {
                 <Link
                   key={item.id}
                   href={`#${item.id}`}
-                  className="py-3 px-4 text-lg text-white/90 hover:bg-white/10 rounded-lg transition-colors"
+                  className="py-3 px-4 text-lg text-white/90 hover:bg-curry-yellow/20 rounded-lg transition-colors"
                   onClick={toggleMenu}
                 >
                   {item.label}
