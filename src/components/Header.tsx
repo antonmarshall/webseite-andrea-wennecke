@@ -55,7 +55,7 @@ const Header = () => {
 
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <Link 
+              <Link
                 key={item.id}
                 href={`#${item.id}`}
                 className={`transition-colors duration-200 py-1 border-b-2 ${
@@ -67,6 +67,11 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
+            <Link href="#contact">
+              <Button className="bg-white text-therapy-blue hover:bg-white/90">
+                Kontakt aufnehmen
+              </Button>
+            </Link>
           </nav>
 
           <Button 
@@ -95,7 +100,7 @@ const Header = () => {
             </div>
             <nav className="flex flex-col space-y-2 px-4 pt-8">
               {navItems.map((item) => (
-                <Link 
+                <Link
                   key={item.id}
                   href={`#${item.id}`}
                   className="py-3 px-4 text-lg text-white/90 hover:bg-white/10 rounded-lg transition-colors"
@@ -104,6 +109,11 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
+              <Link href="#contact" onClick={toggleMenu}>
+                <Button className="w-full bg-white text-therapy-blue hover:bg-white/90">
+                  Kontakt aufnehmen
+                </Button>
+              </Link>
             </nav>
           </div>
         )}
