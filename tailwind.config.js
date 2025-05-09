@@ -14,7 +14,7 @@ export default {
         // Service card colors
         'moss-green': '#8B9A7D',
         'curry-yellow': '#C78C4A',
-        'soft-blue': '#7A8BA8',
+        'soft-blue': '#4A6B8A',
         'warm-purple': '#A06A6A',
         'coral-pink': '#E68C8C',
         'sage-green': '#96A896',
