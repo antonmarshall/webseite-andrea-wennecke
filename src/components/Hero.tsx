@@ -33,7 +33,7 @@ const Hero = () => {
               <Button 
                 className="bg-therapy-blue hover:bg-therapy-blue/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
               >
-                Termin vereinbaren
+                Kontakt aufnehmen
               </Button>
             </CalendlyDialog>
           </div>
