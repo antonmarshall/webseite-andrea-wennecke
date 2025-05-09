@@ -75,7 +75,7 @@ const ContactSection = () => {
 
             <div className="mt-8">
               <CalendlyDialog>
-                <Button className="w-full bg-therapy-blue text-white hover:bg-therapy-blue-dark">
+                <Button className="w-full bg-soft-blue text-white hover:bg-soft-blue/90">
                   Kostenloses Telefonat vereinbaren
                 </Button>
               </CalendlyDialog>
@@ -142,7 +142,7 @@ const ContactSection = () => {
                 type="submit"
                 className={`w-full ${
                   isFormValid 
-                    ? 'bg-therapy-blue text-white hover:bg-therapy-blue-dark' 
+                    ? 'bg-soft-blue text-white hover:bg-soft-blue/90' 
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
                 disabled={!isFormValid}
