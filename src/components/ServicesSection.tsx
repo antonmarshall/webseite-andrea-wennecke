@@ -1,73 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { FaPalette, FaHeartbeat, FaTheaterMasks, FaHandHoldingHeart, FaUser, FaUsers } from 'react-icons/fa';
 
 interface ServiceCardProps {
   title: string;
   description: string;
-  image: string;
+  icon: React.ReactNode;
   colorClass: string;
   index: number;
 }
 
-const ServiceCard = ({ title, description, image, colorClass, index }: ServiceCardProps) => {
-  const [imageError, setImageError] = useState(false);
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    console.error(`Failed to load image: ${image}`, e);
-    setImageError(true);
-  };
-
-  const getHoverColor = (colorClass: string) => {
+const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCardProps) => {
+  const getBackgroundColor = (colorClass: string) => {
     switch (colorClass) {
       case 'creative':
-        return 'bg-moss-green/80'; // Moosgrün
+        return 'bg-[#FF6B6B]'; // Warm Red
       case 'body':
-        return 'bg-curry-yellow/80'; // Curry Gelb
+        return 'bg-[#4ECDC4]'; // Turquoise
       case 'expression':
-        return 'bg-soft-blue/80'; // Sanftes Blau
+        return 'bg-[#FFD93D]'; // Bright Yellow
       case 'healing':
-        return 'bg-warm-purple/80'; // Warmes Lila
+        return 'bg-[#95E1D3]'; // Mint Green
       case 'individual':
-        return 'bg-coral-pink/80'; // Korallenrosa
+        return 'bg-[#FF8B94]'; // Soft Pink
       case 'group':
-        return 'bg-sage-green/80'; // Salbeigrün
+        return 'bg-[#A8E6CF]'; // Light Green
       default:
-        return 'bg-gray-600/80';
+        return 'bg-gray-600';
     }
   };
 
   return (
     <div 
-      className="service-card relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer h-[400px] group"
+      className={`service-card relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer h-[400px] group ${getBackgroundColor(colorClass)}`}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      {/* Bild */}
-      <div className="absolute inset-0 z-0">
-        {!imageError ? (
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-            onError={handleImageError}
-          />
-        ) : (
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-500">{title}</span>
-          </div>
-        )}
-      </div>
-
-      {/* Farbiger Overlay */}
-      <div className={`absolute inset-0 z-10 ${getHoverColor(colorClass)} opacity-0 group-hover:opacity-100 transition-all duration-500`} />
-
-      {/* Text-Inhalt */}
+      {/* Icon and Content */}
       <div className="absolute inset-0 z-20 flex flex-col p-6">
         <div className="flex-1 flex items-center justify-center">
-          <h3 className="text-2xl font-semibold text-white text-center backdrop-blur-[2px] transform transition-all duration-500 group-hover:-translate-y-8">
+          <div className="text-white text-6xl mb-4 transform transition-all duration-500 group-hover:scale-110">
+            {icon}
+          </div>
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center">
+          <h3 className="text-2xl font-semibold text-white text-center transform transition-all duration-500 group-hover:-translate-y-4">
             {title}
           </h3>
-        </div>
-        <div className="flex-1 flex items-center justify-center">
-          <p className="text-white text-center text-lg leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 max-w-[90%]">
+          <p className="text-white text-center text-lg leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 max-w-[90%] mt-4">
             {description}
           </p>
         </div>
@@ -81,37 +59,37 @@ const ServicesSection = () => {
     {
       title: "Kunsttherapie",
       description: "Durch freies Malen, Formen und kreative Materialien Zugang zu Emotionen finden.",
-      image: "/webseite-andrea-wennecke/images/kunsttherapie.jpg",
+      icon: <FaPalette />,
       colorClass: "creative",
     },
     {
       title: "Körperorientierte Psychotherapie",
       description: "Verbindung von Körper und Psyche zur ganzheitlichen Wohlbefinden.",
-      image: "/webseite-andrea-wennecke/images/Körperorientierte Psychotherapie.jpg",
+      icon: <FaHeartbeat />,
       colorClass: "body",
     },
     {
       title: "Ausdruckstherapie",
       description: "Verschiedene kreative Ausdrucksformen nutzen, um Emotionen zu verarbeiten und neue Perspektiven zu gewinnen.",
-      image: "/webseite-andrea-wennecke/images/Ausdruckstherapie.jpg",
+      icon: <FaTheaterMasks />,
       colorClass: "expression",
     },
     {
       title: "Traumatherapie",
       description: "Behutsame Bearbeitung traumatischer Erfahrungen durch kreative und körperorientierte Methoden.",
-      image: "/webseite-andrea-wennecke/images/psychotrauma.jpg",
+      icon: <FaHandHoldingHeart />,
       colorClass: "healing",
     },
     {
       title: "Einzeltherapie",
       description: "Individuell zugeschnittene Begleitung für persönliche Veränderungswünsche und Entwicklungsziele.",
-      image: "/webseite-andrea-wennecke/images/einzeltherapie.jpg",
+      icon: <FaUser />,
       colorClass: "individual",
     },
     {
       title: "Gruppentherapie",
       description: "In kleinen Gruppen verschiedene Formen und gemeinsam kreative Lösungswege erarbeiten.",
-      image: "/webseite-andrea-wennecke/images/Gruppentherapie.jpg",
+      icon: <FaUsers />,
       colorClass: "group",
     },
   ];
@@ -131,7 +109,7 @@ const ServicesSection = () => {
               key={index}
               title={service.title}
               description={service.description}
-              image={service.image}
+              icon={service.icon}
               colorClass={service.colorClass}
               index={index}
             />
