@@ -76,7 +76,7 @@ const ContactSection = () => {
             <div className="mt-8">
               <CalendlyDialog>
                 <Button className="w-full bg-therapy-blue text-white hover:bg-therapy-blue-dark">
-                  Termin vereinbaren
+                  Kostenloses Telefonat vereinbaren
                 </Button>
               </CalendlyDialog>
             </div>
