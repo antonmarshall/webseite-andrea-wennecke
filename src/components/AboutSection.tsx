@@ -15,7 +15,7 @@ const AboutCard = ({
 }) => {
   return (
     <div 
-      className="bg-card-warm/90 backdrop-blur-sm rounded-xl p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-card-warm" 
+      className="bg-white/90 backdrop-blur-sm rounded-xl p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white" 
       style={{ animationDelay: `${0.1 * delayIndex}s` }}
     >
       <h3 className="text-lg font-semibold mb-3 text-therapy-blue">
@@ -72,7 +72,7 @@ const AboutSection = () => {
             </div>
             <div className="mt-6 md:mt-8 text-center">
               <Link to="/werdegang">
-                <Button className="w-full bg-soft-blue text-white hover:bg-soft-blue/90">
+                <Button className="w-full bg-therapy-blue text-white hover:bg-therapy-blue/90">
                   Zu meinem Werdegang
                 </Button>
               </Link>

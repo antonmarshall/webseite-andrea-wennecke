@@ -25,9 +25,9 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
       const isNearCenter = Math.abs(cardCenter - viewportCenter) < 150; // 150px threshold
       
       if (isNearCenter) {
-        cardRef.current.classList.add('group-hover');
+        cardRef.current.classList.add('is-visible');
       } else {
-        cardRef.current.classList.remove('group-hover');
+        cardRef.current.classList.remove('is-visible');
       }
     };
 
@@ -44,26 +44,26 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
   const getBackgroundColor = (colorClass: string) => {
     switch (colorClass) {
       case 'expression':
-        return 'bg-moss-green hover:bg-moss-green/90'; // Moss Green
+        return 'bg-moss-green'; // Moss Green
       case 'art':
-        return 'bg-curry-yellow hover:bg-curry-yellow/90'; // Curry Yellow
+        return 'bg-curry-yellow'; // Curry Yellow
       case 'trauma':
-        return 'bg-soft-blue hover:bg-soft-blue/90'; // Soft Blue
+        return 'bg-soft-blue'; // Soft Blue
       case 'youth':
-        return 'bg-warm-purple hover:bg-warm-purple/90'; // Warm Purple
+        return 'bg-warm-purple'; // Warm Purple
       case 'supervision':
-        return 'bg-coral-pink hover:bg-coral-pink/90'; // Coral Pink
+        return 'bg-coral-pink'; // Coral Pink
       case 'training':
-        return 'bg-sage-green hover:bg-sage-green/90'; // Sage Green
+        return 'bg-sage-green'; // Sage Green
       default:
-        return 'bg-gray-600 hover:bg-gray-700';
+        return 'bg-therapy-blue';
     }
   };
 
   return (
     <div 
       ref={cardRef}
-      className={`relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer h-[250px] md:h-[400px] group ${getBackgroundColor(colorClass)}`}
+      className={`relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer h-[250px] md:h-[400px] ${getBackgroundColor(colorClass)}`}
       style={{ 
         opacity: 0,
         animation: `fadeIn 0.5s ease-out ${index * 0.1}s forwards`
@@ -71,15 +71,15 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
     >
       <div className="absolute inset-0 flex flex-col p-4 md:p-6">
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-white text-4xl md:text-6xl transform transition-all duration-500 group-hover:scale-110 md:group-hover:scale-110">
+          <div className="text-white text-4xl md:text-6xl transform transition-all duration-500">
             {icon}
           </div>
         </div>
         <div className="flex-1 flex flex-col items-center justify-center">
-          <h3 className="text-lg md:text-2xl font-semibold text-white text-center mb-2 md:mb-4 transform transition-all duration-500 group-hover:-translate-y-2 md:group-hover:-translate-y-2">
+          <h3 className="text-lg md:text-2xl font-semibold text-white text-center mb-2 md:mb-4 transform transition-all duration-500">
             {title}
           </h3>
-          <p className="text-white text-center text-sm md:text-lg leading-relaxed opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-all duration-500 max-w-[90%]">
+          <p className="text-white text-center text-sm md:text-lg leading-relaxed opacity-0 transform translate-y-4 transition-all duration-500 max-w-[90%]">
             {description}
           </p>
         </div>

@@ -53,3 +53,32 @@
 .service-card-icon {
   @apply h-12 w-12 text-therapy-blue mb-4;
 }
+
+/* Service card styles */
+.is-visible .text-white {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.is-visible .text-4xl {
+  transform: scale(1.1) !important;
+}
+
+.is-visible .text-lg {
+  transform: translateY(-0.5rem) !important;
+}
+
+@media (min-width: 768px) {
+  .group:hover .text-white {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .group:hover .text-4xl {
+    transform: scale(1.1) !important;
+  }
+
+  .group:hover .text-lg {
+    transform: translateY(-0.5rem) !important;
+  }
+}
