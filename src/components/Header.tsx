@@ -10,7 +10,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['services', 'about', 'faq', 'contact', 'location'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 150;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -34,6 +34,24 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const isActive = (section: string) => activeSection === section;
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 120;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    if (isMenuOpen) {
+      toggleMenu();
+    }
+  };
 
   const navItems = [
     { id: 'services', label: 'Therapieangebote' },
@@ -60,6 +78,7 @@ const Header = () => {
               <Link
                 key={item.id}
                 href={`#${item.id}`}
+                onClick={(e) => handleNavClick(e, item.id)}
                 className={`transition-colors duration-200 py-1 px-3 rounded-lg ${
                   isActive(item.id) 
                     ? 'bg-white/20 text-white' 
@@ -100,12 +119,12 @@ const Header = () => {
                 <Link
                   key={item.id}
                   href={`#${item.id}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
                   className={`py-3 px-4 text-lg rounded-lg transition-colors ${
                     isActive(item.id)
                       ? 'bg-white/20 text-white'
                       : 'text-white/80 hover:text-white hover:bg-white/10'
                   }`}
-                  onClick={toggleMenu}
                 >
                   {item.label}
                 </Link>

@@ -72,7 +72,7 @@ const AboutSection = () => {
             </div>
             <div className="mt-6 md:mt-8 text-center">
               <Link to="/werdegang">
-                <Button className="w-full bg-therapy-blue text-white hover:bg-therapy-blue/90">
+                <Button className="w-full bg-soft-blue text-white hover:bg-soft-blue/90">
                   Zu meinem Werdegang
                 </Button>
               </Link>
