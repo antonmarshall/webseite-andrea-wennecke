@@ -71,15 +71,15 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
     >
       <div className="absolute inset-0 flex flex-col p-4 md:p-6">
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-white text-4xl md:text-6xl transform transition-all duration-500 group-hover:scale-110">
+          <div className="text-white text-4xl md:text-6xl transform transition-all duration-500 group-hover:scale-110 md:group-hover:scale-110">
             {icon}
           </div>
         </div>
         <div className="flex-1 flex flex-col items-center justify-center">
-          <h3 className="text-lg md:text-2xl font-semibold text-white text-center mb-2 md:mb-4 transform transition-all duration-500 group-hover:-translate-y-2">
+          <h3 className="text-lg md:text-2xl font-semibold text-white text-center mb-2 md:mb-4 transform transition-all duration-500 group-hover:-translate-y-2 md:group-hover:-translate-y-2">
             {title}
           </h3>
-          <p className="text-white text-center text-sm md:text-lg leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 max-w-[90%]">
+          <p className="text-white text-center text-sm md:text-lg leading-relaxed opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-all duration-500 max-w-[90%]">
             {description}
           </p>
         </div>
@@ -127,6 +127,38 @@ const ServicesSection = () => {
       colorClass: "training",
     },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Only run on mobile devices
+      if (window.innerWidth >= 768) return;
+
+      const cards = document.querySelectorAll('.group');
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const cardCenter = rect.top + rect.height / 2;
+        const viewportCenter = viewportHeight / 2;
+        
+        // Check if the card's center is near the viewport's center
+        const isNearCenter = Math.abs(cardCenter - viewportCenter) < 100;
+        
+        if (isNearCenter) {
+          card.classList.add('group-hover');
+        } else {
+          card.classList.remove('group-hover');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Initial check
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <section id="services" className="section py-8 md:py-16">
