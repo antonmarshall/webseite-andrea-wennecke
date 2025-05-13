@@ -45,22 +45,22 @@ const AboutSection = () => {
   return (
     <section id="about" className="section bg-sand">
       <div className="container mx-auto max-w-6xl px-4">
-        <h2 className="text-center text-3xl font-bold mb-12 text-therapy-blue">Über Mich</h2>
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="md:w-2/5">
+        <h2 className="text-center text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-therapy-blue">Über Mich</h2>
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+          <div className="w-full md:w-2/5">
             <div className="relative">
               <div className="absolute inset-0 bg-therapy-blue/10 rounded-2xl transform rotate-3"></div>
               <div className="relative rounded-2xl overflow-hidden shadow-lg">
                 <img 
                   src="/webseite-andrea-wennecke/images/profilbild.png" 
                   alt="Andrea Wennecke"
-                  className="w-full h-auto object-cover rounded-2xl"
+                  className="w-full h-auto object-cover rounded-2xl max-h-[300px] md:max-h-none"
                 />
               </div>
             </div>
           </div>
-          <div className="md:w-3/5">
-            <div className="grid gap-6">
+          <div className="w-full md:w-3/5">
+            <div className="grid gap-4 md:gap-6">
               {aboutCards.map((card, index) => (
                 <AboutCard 
                   key={index} 
@@ -70,7 +70,7 @@ const AboutSection = () => {
                 />
               ))}
             </div>
-            <div className="mt-8 text-center">
+            <div className="mt-6 md:mt-8 text-center">
               <Link to="/werdegang">
                 <Button className="w-full bg-soft-blue text-white hover:bg-soft-blue/90">
                   Zu meinem Werdegang
