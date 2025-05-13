@@ -13,43 +13,31 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Get the card's position relative to the viewport
-            const rect = entry.boundingClientRect;
-            const viewportHeight = window.innerHeight;
-            const cardCenter = rect.top + rect.height / 2;
-            const viewportCenter = viewportHeight / 2;
-            
-            // Check if the card's center is near the viewport's center
-            const isNearCenter = Math.abs(cardCenter - viewportCenter) < 100; // 100px threshold
-            
-            if (isNearCenter) {
-              entry.target.classList.add('group-hover');
-            } else {
-              entry.target.classList.remove('group-hover');
-            }
-          } else {
-            entry.target.classList.remove('group-hover');
-          }
-        });
-      },
-      {
-        threshold: [0, 0.25, 0.5, 0.75, 1], // Multiple thresholds for smoother detection
-        rootMargin: '-10% 0px'
-      }
-    );
+    const handleScroll = () => {
+      if (!cardRef.current) return;
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
+      const rect = cardRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const cardCenter = rect.top + rect.height / 2;
+      const viewportCenter = viewportHeight / 2;
+      
+      // Check if the card's center is near the viewport's center
+      const isNearCenter = Math.abs(cardCenter - viewportCenter) < 150; // 150px threshold
+      
+      if (isNearCenter) {
+        cardRef.current.classList.add('group-hover');
+      } else {
+        cardRef.current.classList.remove('group-hover');
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    // Initial check
+    handleScroll();
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
