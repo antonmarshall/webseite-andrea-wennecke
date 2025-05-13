@@ -15,13 +15,13 @@ const AboutCard = ({
 }) => {
   return (
     <div 
-      className="bg-white/90 backdrop-blur-sm rounded-xl p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white" 
+      className="bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white" 
       style={{ animationDelay: `${0.1 * delayIndex}s` }}
     >
-      <h3 className="text-lg font-semibold mb-3 text-therapy-blue">
+      <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3 text-therapy-blue">
         {title}
       </h3>
-      <p className="text-gray-600 leading-relaxed">{content}</p>
+      <p className="text-sm md:text-base text-gray-600 leading-relaxed">{content}</p>
     </div>
   );
 };
@@ -45,8 +45,8 @@ const AboutSection = () => {
   return (
     <section id="about" className="section bg-sand">
       <div className="container mx-auto max-w-6xl px-4">
-        <h2 className="text-center text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-therapy-blue">Über Mich</h2>
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+        <h2 className="text-center text-xl md:text-3xl font-bold mb-6 md:mb-12 text-therapy-blue">Über Mich</h2>
+        <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
           <div className="w-full md:w-2/5">
             <div className="relative">
               <div className="absolute inset-0 bg-therapy-blue/10 rounded-2xl transform rotate-3"></div>
@@ -54,13 +54,13 @@ const AboutSection = () => {
                 <img 
                   src="/webseite-andrea-wennecke/images/profilbild.png" 
                   alt="Andrea Wennecke"
-                  className="w-full h-auto object-cover rounded-2xl max-h-[300px] md:max-h-none object-top"
+                  className="w-full h-auto object-cover rounded-2xl max-h-[250px] md:max-h-none object-top"
                 />
               </div>
             </div>
           </div>
           <div className="w-full md:w-3/5">
-            <div className="grid gap-4 md:gap-6">
+            <div className="grid gap-3 md:gap-6">
               {aboutCards.map((card, index) => (
                 <AboutCard 
                   key={index} 
@@ -70,7 +70,7 @@ const AboutSection = () => {
                 />
               ))}
             </div>
-            <div className="mt-6 md:mt-8 text-center">
+            <div className="mt-4 md:mt-8 text-center">
               <Link to="/werdegang">
                 <Button className="w-full bg-soft-blue text-white hover:bg-soft-blue/90">
                   Zu meinem Werdegang
