@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 // Replace with your Calendly URL
-const CALENDLY_URL = 'https://calendly.com/your-username';
+const CALENDLY_URL = 'https://calendly.com/anton-marshall03/30min';
 
 export const CalendlyDialog = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {

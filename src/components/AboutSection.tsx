@@ -70,12 +70,23 @@ const AboutSection = () => {
                 />
               ))}
             </div>
-            <div className="mt-8 text-center">
-              <CalendlyDialog>
-                <Button className="w-full bg-soft-blue text-white hover:bg-soft-blue/90">
-                  Kostenloses Telefonat vereinbaren
-                </Button>
-              </CalendlyDialog>
+            <div className="mt-8">
+              <div className="bg-card-warm/90 backdrop-blur-sm rounded-xl p-5 shadow-sm">
+                <h3 className="text-lg font-semibold mb-3 text-therapy-blue">Mein Werdegang</h3>
+                <ul className="text-gray-600 space-y-2">
+                  <li>• Diplom in Kunsttherapie</li>
+                  <li>• Weiterbildung in Traumatherapie</li>
+                  <li>• Zertifizierte Körpertherapeutin</li>
+                  <li>• Langjährige Erfahrung in der therapeutischen Arbeit</li>
+                </ul>
+                <div className="mt-4 text-center">
+                  <Link to="/werdegang">
+                    <Button className="w-full bg-soft-blue text-white hover:bg-soft-blue/90">
+                      Mein Werdegang
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
