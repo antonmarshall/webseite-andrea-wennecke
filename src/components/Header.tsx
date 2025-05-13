@@ -9,7 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'services', 'prices', 'contact'];
+      const sections = ['services', 'about', 'faq', 'contact', 'location'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -26,6 +26,8 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Initial check
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
