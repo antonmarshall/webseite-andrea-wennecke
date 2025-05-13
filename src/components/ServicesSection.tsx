@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaPalette, FaHeartbeat, FaTheaterMasks, FaHandHoldingHeart, FaChild, FaUsers, FaChalkboardTeacher } from 'react-icons/fa';
 
 interface ServiceCardProps {
@@ -7,9 +7,11 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   colorClass: string;
   index: number;
+  isActive: boolean;
+  onActivate: () => void;
 }
 
-const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon, colorClass, index, isActive, onActivate }: ServiceCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,10 +29,8 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
       // Check if the card's center is near the viewport's center
       const isNearCenter = Math.abs(cardCenter - viewportCenter) < 150; // 150px threshold
       
-      if (isNearCenter) {
-        cardRef.current.classList.add('is-visible');
-      } else {
-        cardRef.current.classList.remove('is-visible');
+      if (isNearCenter && !isActive) {
+        onActivate();
       }
     };
 
@@ -42,7 +42,7 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isActive, onActivate]);
 
   const getBackgroundColor = (colorClass: string) => {
     switch (colorClass) {
@@ -66,7 +66,7 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
   return (
     <div 
       ref={cardRef}
-      className={`relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer h-[250px] md:h-[400px] group ${getBackgroundColor(colorClass)}`}
+      className={`relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 cursor-pointer h-[250px] md:h-[400px] group ${getBackgroundColor(colorClass)} ${isActive ? 'is-visible' : ''}`}
       style={{ 
         opacity: 0,
         animation: `fadeIn 0.5s ease-out ${index * 0.1}s forwards`
@@ -92,6 +92,8 @@ const ServiceCard = ({ title, description, icon, colorClass, index }: ServiceCar
 };
 
 const ServicesSection = () => {
+  const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
+
   const services = [
     {
       title: "Ausdrucksorientierte Psychotherapie",
@@ -149,6 +151,8 @@ const ServicesSection = () => {
               icon={service.icon}
               colorClass={service.colorClass}
               index={index}
+              isActive={activeCardIndex === index}
+              onActivate={() => setActiveCardIndex(index)}
             />
           ))}
         </div>
