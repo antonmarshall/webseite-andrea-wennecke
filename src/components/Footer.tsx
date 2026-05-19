@@ -54,6 +54,15 @@ const Footer = () => {
                 </button>
               </li>
               <li>
+                <button
+                  type="button"
+                  onClick={() => handleNavigation('galerie')}
+                  className="hover:text-white/80"
+                >
+                  Galerie
+                </button>
+              </li>
+              <li>
                 <Link to="/about" className="hover:text-white/80">
                   Über mich
                 </Link>

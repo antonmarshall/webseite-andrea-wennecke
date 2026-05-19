@@ -9,6 +9,7 @@ type MenuItem =
 const menuItems: MenuItem[] = [
   { id: 'home', text: 'Start', type: 'scroll' },
   { id: 'therapy', text: 'Angebote', type: 'scroll' },
+  { id: 'galerie', text: 'Galerie', type: 'scroll' },
   { id: 'prices', text: 'Preise', type: 'scroll' },
   { id: 'contact', text: 'Kontakt', type: 'scroll' },
   { id: 'about', text: '\u00dcber mich', type: 'route', path: '/about' },
@@ -26,7 +27,7 @@ const Header = () => {
   useEffect(() => {
     if (!isHomePage) return;
 
-    const sections = ['home', 'therapy', 'prices', 'contact'];
+    const sections = ['home', 'therapy', 'galerie', 'prices', 'contact'];
     const handleScroll = () => {
       const current = sections.find((section) => {
         const element = document.getElementById(section);
