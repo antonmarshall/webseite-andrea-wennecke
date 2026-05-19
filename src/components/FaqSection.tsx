@@ -12,7 +12,7 @@ const FaqItem = ({
   return <div className="border-b border-gray-200 py-4">
       <button className="flex justify-between items-center w-full text-left" onClick={() => setIsOpen(!isOpen)}>
         <h3 className="text-lg font-medium text-gray-900">{question}</h3>
-        <div className="text-therapyBlue">
+        <div className="text-brand-primary">
           {isOpen ? <Minus size={20} /> : <Plus size={20} />}
         </div>
       </button>
@@ -23,9 +23,9 @@ const FaqItem = ({
     </div>;
 };
 const FaqSection = () => {
-  return <section id="faq" className="py-20 bg-orange-50">
+  return <section id="faq" className="py-20 bg-surface-muted">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-14 text-therapyBlue">Häufig gestellte Fragen</h2>
+        <h2 className="text-3xl font-bold text-center mb-14 text-brand-primary">Häufig gestellte Fragen</h2>
         
         <div className="max-w-3xl mx-auto">
           <FaqItem question="Wie läuft eine Therapiesitzung ab?" answer="Eine typische Therapiesitzung dauert etwa 50-60 Minuten. Nach einem kurzen Gespräch über Ihr aktuelles Befinden und mögliche Themen für die Sitzung, nutzen wir kreative Methoden wie Malen, Gestalten oder körperorientierte Übungen. Zum Abschluss reflektieren wir gemeinsam über den Prozess und die entstandenen Erkenntnisse." />

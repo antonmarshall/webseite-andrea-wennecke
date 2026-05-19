@@ -2,145 +2,161 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowLeft } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+type MenuItem =
+  | { id: string; text: string; type: 'scroll' }
+  | { id: string; text: string; type: 'route'; path: string };
+
+const menuItems: MenuItem[] = [
+  { id: 'home', text: 'Start', type: 'scroll' },
+  { id: 'therapy', text: 'Angebote', type: 'scroll' },
+  { id: 'prices', text: 'Preise', type: 'scroll' },
+  { id: 'contact', text: 'Kontakt', type: 'scroll' },
+  { id: 'about', text: 'Über mich', type: 'route', path: '/about' },
+  { id: 'faq', text: 'FAQ', type: 'scroll' },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
   const navigate = useNavigate();
-  const isLegalPage = location.pathname === '/impressum' || location.pathname === '/datenschutz';
+  const isLegalPage =
+    location.pathname === '/impressum' || location.pathname === '/datenschutz';
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
+    if (!isHomePage) return;
+
+    const sections = ['home', 'therapy', 'prices', 'contact', 'directions', 'faq'];
     const handleScroll = () => {
-      const sections = ['home', 'about', 'therapy', 'prices', 'contact', 'directions', 'faq'];
-      const current = sections.find(section => {
+      const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // More precise detection with a smaller threshold
           return rect.top <= 100 && rect.bottom >= 0;
         }
         return false;
       });
-
-      if (current) {
-        setActiveSection(current);
-      }
+      if (current) setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
-
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
 
-  const handleNavigation = (id: string) => {
-    // Wenn wir auf einer Legal-Seite sind, navigiere zuerst zur Hauptseite
-    if (isLegalPage) {
-      navigate('/');
-      // Warte kurz, bis die Navigation abgeschlossen ist, bevor wir scrollen
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      }, 100);
-    } else {
-      // Wenn wir bereits auf der Hauptseite sind, einfach scrollen
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMenuOpen(false);
     setActiveSection(id);
   };
 
-  const menuItems = [
-    { id: 'home', text: 'Home' },
-    { id: 'therapy', text: 'Therapieangebote' },
-    { id: 'about', text: 'Über mich', link: '/about' },
-    { id: 'prices', text: 'Preise' },
-    { id: 'contact', text: 'Kontakt' },
-    { id: 'directions', text: 'Anfahrt' },
-    { id: 'faq', text: 'FAQ' }
-  ];
+  const handleNavigation = (item: MenuItem) => {
+    setIsMenuOpen(false);
+
+    if (item.type === 'route') {
+      navigate(item.path);
+      return;
+    }
+
+    if (isLegalPage || !isHomePage) {
+      navigate('/');
+      setTimeout(() => scrollToSection(item.id), 100);
+    } else {
+      scrollToSection(item.id);
+    }
+  };
+
+  const isActive = (item: MenuItem) => {
+    if (item.type === 'route') {
+      return location.pathname === item.path;
+    }
+    return isHomePage && activeSection === item.id;
+  };
 
   return (
-    <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center rounded-b-xl bg-sky-800">
-        <div className="flex items-center bg-transparent">
+    <header className="sticky top-0 z-50 bg-surface-elevated/90 backdrop-blur-sm shadow-sm">
+      <div className="container mx-auto flex items-center justify-between rounded-b-xl bg-brand-primary px-4 py-4">
+        <div className="flex items-center">
           {isLegalPage ? (
             <button
               onClick={() => navigate('/')}
-              className="text-white hover:text-gray-200 transition-colors flex items-center"
+              className="flex items-center text-[var(--text-on-brand)] transition-colors hover:opacity-90"
             >
               <ArrowLeft size={20} className="mr-2" />
               <span>Zurück</span>
             </button>
           ) : (
-            <h1 className="text-white text-xl font-medium">Andrea Wennecke</h1>
+            <button
+              onClick={() =>
+                handleNavigation({ id: 'home', text: 'Start', type: 'scroll' })
+              }
+              className="text-lg font-medium text-[var(--text-on-brand)] hover:opacity-90"
+            >
+              Andrea Wennecke
+            </button>
           )}
         </div>
-        
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-4">
-          {menuItems.map(item => (
+
+        <nav className="hidden md:flex gap-1">
+          {menuItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => handleNavigation(item.id)}
-              className={`px-4 py-2 rounded-2xl transition-all duration-300 text-orange-50 focus:outline-none
-                ${activeSection === item.id 
-                  ? 'bg-therapyLightBlue/40 text-white font-medium' 
-                  : 'hover:bg-therapyLightBlue/20'}`}
+              onClick={() => handleNavigation(item)}
+              className={`rounded-2xl px-4 py-2 text-sm transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+                isActive(item)
+                  ? 'bg-white/20 font-medium text-white'
+                  : 'text-white/90 hover:bg-white/10'
+              }`}
             >
               {item.text}
             </button>
           ))}
         </nav>
-        
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-white p-2 rounded-lg transition-colors focus:outline-none hover:bg-therapyLightBlue/20" 
+
+        <button
+          className="rounded-lg p-2 text-white transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      
-      {/* Mobile Menu */}
-      <div 
-        className={`md:hidden fixed inset-0 bg-black/50 transition-opacity duration-300 z-40
-          ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+
+      <div
+        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden ${
+          isMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
+        }`}
         onClick={() => setIsMenuOpen(false)}
+        aria-hidden
       />
-      <div 
-        className={`md:hidden fixed top-[72px] left-0 right-0 bg-white shadow-lg transition-transform duration-300 z-50
-          ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
+      <div
+        className={`fixed left-0 right-0 top-[72px] z-50 bg-surface-elevated shadow-lg transition-transform duration-300 md:hidden ${
+          isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        }`}
       >
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col space-y-2">
-            {menuItems.map(item => (
-              <button
-                key={item.id}
-                onClick={() => handleNavigation(item.id)}
-                className={`p-3 text-left rounded-2xl transition-all duration-300 focus:outline-none
-                  ${activeSection === item.id 
-                    ? 'bg-therapyBlue text-white font-medium' 
-                    : 'text-therapyBlue hover:bg-therapyBlue/10'}`}
-              >
-                {item.text}
-              </button>
-            ))}
-          </div>
-        </div>
+        <nav className="container mx-auto flex flex-col gap-1 px-4 py-4">
+          {menuItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavigation(item)}
+              className={`rounded-2xl p-3 text-left transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/30 ${
+                isActive(item)
+                  ? 'bg-brand-primary font-medium text-white'
+                  : 'text-brand-primary hover:bg-brand-primary/10'
+              }`}
+            >
+              {item.text}
+            </button>
+          ))}
+        </nav>
       </div>
     </header>
   );
 };
 
 export default Header;
+
+

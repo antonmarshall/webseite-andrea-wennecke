@@ -1,91 +1,108 @@
-import React from 'react';
-import { Palette, Brain, Music, Heart, User, Users, BookOpen } from 'lucide-react';
-
-type TherapyCardProps = {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  borderColor: string;
-  hoverColor: string;
-};
-
-const TherapyCard = ({
-  icon,
-  title,
-  description,
-  borderColor,
-  hoverColor
-}: TherapyCardProps) => {
-  return (
-    <div 
-      className={`p-6 rounded-lg shadow-md h-full transition-all duration-300 hover:shadow-lg bg-orange-50 border-t-4 ${borderColor} hover:bg-opacity-90 ${hoverColor}`}
-    >
-      <div className="text-therapyBlue mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
-      <p className="text-gray-800">{description}</p>
-    </div>
-  );
-};
+import React, { useState, useRef, useEffect } from 'react';
+import { ChevronDown } from 'lucide-react';
+import { therapyServices, type TherapyServiceId } from '@/data/therapyServices';
+import { cn } from '@/lib/utils';
 
 const TherapyServices = () => {
-  const therapyCards = [
-    {
-      icon: <Brain size={32} />,
-      title: "Ausdrucksorientierte Psychotherapie",
-      description: "Ganzheitliche Therapieform, die verbale und nonverbale Ausdrucksmöglichkeiten verbindet.",
-      borderColor: "border-therapyLightBlue",
-      hoverColor: "hover:bg-therapyLightBlue/10"
-    },
-    {
-      icon: <Palette size={32} />,
-      title: "Kunsttherapie",
-      description: "Therapeutische Begleitung durch künstlerische Prozesse und kreative Ausdrucksformen.",
-      borderColor: "border-therapyPurple",
-      hoverColor: "hover:bg-therapyPurple/10"
-    },
-    {
-      icon: <Heart size={32} />,
-      title: "Traumatherapie",
-      description: "Behutsame Bearbeitung traumatischer Erfahrungen durch spezialisierte Methoden.",
-      borderColor: "border-therapyPink",
-      hoverColor: "hover:bg-therapyPink/10"
-    },
-    {
-      icon: <User size={32} />,
-      title: "Kinder & Jugendliche",
-      description: "Altersgerechte therapeutische Begleitung für junge Menschen in schwierigen Lebensphasen.",
-      borderColor: "border-therapyRed",
-      hoverColor: "hover:bg-therapyRed/10"
-    },
-    {
-      icon: <Users size={32} />,
-      title: "Supervision",
-      description: "Professionelle Begleitung und Reflexion für Fachkräfte im psychosozialen Bereich.",
-      borderColor: "border-therapyGreen",
-      hoverColor: "hover:bg-therapyGreen/10"
-    },
-    {
-      icon: <BookOpen size={32} />,
-      title: "Weiterbildung",
-      description: "Qualifizierte Fortbildungsangebote für Fachkräfte in therapeutischen Berufen.",
-      borderColor: "border-therapyTurquoise",
-      hoverColor: "hover:bg-therapyTurquoise/10"
+  const [openId, setOpenId] = useState<TherapyServiceId | null>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  const toggleService = (id: TherapyServiceId) => {
+    setOpenId((current) => (current === id ? null : id));
+  };
+
+  const openService = openId
+    ? therapyServices.find((s) => s.id === openId)
+    : null;
+
+  useEffect(() => {
+    if (openId && panelRef.current) {
+      panelRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-  ];
+  }, [openId]);
 
   return (
-    <section id="therapy" className="py-20 bg-orange-50">
-      <div className="container mx-auto px-8 bg-transparent">
-        <h2 className="text-3xl font-bold text-center mb-6 text-therapyBlue">Mein Therapieangebot</h2>
-        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-14">
-          Entdecken Sie meine vielfältigen Therapiemethoden für Erwachsene und Jugendliche.
+    <section id="therapy" className="py-20 bg-surface">
+      <div className="container mx-auto px-4 md:px-8">
+        <h2 className="text-3xl font-bold text-center mb-4 text-brand-primary">
+          Therapieangebote
+        </h2>
+        <p className="text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-12">
+          Wählen Sie ein Angebot, um mehr zu erfahren. Die ausführlichen Texte
+          werden noch von Andrea Wennecke ergänzt.
         </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {therapyCards.map((card, index) => (
-            <TherapyCard key={index} {...card} />
-          ))}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          {therapyServices.map((service) => {
+            const Icon = service.icon;
+            const isOpen = openId === service.id;
+
+            return (
+              <button
+                key={service.id}
+                type="button"
+                onClick={() => toggleService(service.id)}
+                aria-expanded={isOpen}
+                aria-controls={`therapy-panel-${service.id}`}
+                className={cn(
+                  'group relative flex min-h-[140px] flex-col items-center justify-center rounded-xl p-6 text-center text-white shadow-md transition-all duration-300',
+                  'hover:shadow-lg hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring-focus)] focus-visible:ring-offset-2',
+                  isOpen &&
+                    'ring-2 ring-white ring-offset-2 ring-offset-surface brightness-110 shadow-lg',
+                  service.id === 'cultural' &&
+                    'lg:col-span-3 lg:max-w-md lg:mx-auto lg:w-full'
+                )}
+                style={{ backgroundColor: `var(${service.colorVar})` }}
+              >
+                <Icon
+                  className="mb-3 opacity-95 transition-transform duration-300 group-hover:scale-110"
+                  size={36}
+                  strokeWidth={1.5}
+                  aria-hidden
+                />
+                <span className="text-lg font-semibold leading-snug">
+                  {service.title}
+                </span>
+                <ChevronDown
+                  className={cn(
+                    'absolute bottom-3 right-3 h-5 w-5 opacity-70 transition-transform duration-300',
+                    isOpen && 'rotate-180'
+                  )}
+                  aria-hidden
+                />
+              </button>
+            );
+          })}
         </div>
+
+        {openService && (
+          <div
+            ref={panelRef}
+            id={`therapy-panel-${openService.id}`}
+            role="region"
+            aria-labelledby={`therapy-heading-${openService.id}`}
+            className="mt-8 animate-panel-in rounded-xl border border-[var(--border-subtle)] bg-surface-elevated p-6 md:p-10 shadow-md"
+          >
+            <div
+              className="mb-4 h-1 w-16 rounded-full"
+              style={{ backgroundColor: `var(${openService.colorVar})` }}
+            />
+            <h3
+              id={`therapy-heading-${openService.id}`}
+              className="text-2xl font-bold text-brand-primary mb-2"
+            >
+              {openService.title}
+            </h3>
+            <p className="text-[var(--text-secondary)] mb-6 font-medium">
+              {openService.shortDescription}
+            </p>
+            <div className="max-w-none text-[var(--text-primary)] leading-relaxed space-y-4">
+              {openService.detailText.split('\n\n').map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

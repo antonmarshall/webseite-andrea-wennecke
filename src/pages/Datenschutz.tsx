@@ -8,7 +8,7 @@ const Datenschutz = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow container mx-auto px-8 py-12">
-        <h1 className="text-3xl font-bold mb-6 text-therapyBlue">Datenschutzerklärung</h1>
+        <h1 className="text-3xl font-bold mb-6 text-brand-primary">Datenschutzerklärung</h1>
         <div className="space-y-6">
           <section>
             <h2 className="text-xl font-semibold mb-3">1. Datenschutz auf einen Blick</h2>

@@ -8,7 +8,7 @@ const Impressum = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow container mx-auto px-8 py-12">
-        <h1 className="text-3xl font-bold mb-6 text-therapyBlue">Impressum</h1>
+        <h1 className="text-3xl font-bold mb-6 text-brand-primary">Impressum</h1>
         <div className="space-y-4">
           <section>
             <h2 className="text-xl font-semibold mb-3">Angaben gemäß § 5 TMG</h2>
