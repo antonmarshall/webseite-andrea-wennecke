@@ -1,51 +1,53 @@
 /**
  * Zentrale Farbpalette – Andrea Wennecke Praxis
- * Sättigung zwischen Pastell und kräftigem Lack-Look.
- * Alle Komponenten sollten diese Tokens nutzen.
+ * Kräftiger als Pastell, weniger flach als Lack – inspiriert vom Kunden-Mockup.
  */
 :root {
   /* Brand */
-  --brand-primary: #1a4a6e;
-  --brand-primary-hover: #153d5c;
-  --brand-accent: #c45c4a;
-  --brand-accent-hover: #b04f3f;
+  --brand-primary: #1a5f8f;
+  --brand-primary-hover: #154d75;
+  --brand-accent: #2a9d8f;
+  --brand-accent-hover: #238276;
 
-  /* Flächen & Text */
-  --surface: #f4f0e8;
+  /* Flächen & Text (kühl, nicht beige) */
+  --surface: #f5f8fb;
   --surface-elevated: #ffffff;
-  --surface-muted: #ebe6dc;
-  --text-primary: #1f2937;
-  --text-secondary: #4b5563;
+  --surface-muted: #e8eef5;
+  --text-primary: #1a2e3d;
+  --text-secondary: #4a5f6f;
   --text-on-brand: #ffffff;
 
+  /* Hero-Verlauf (Mockup: hellblau → helles Lavendelweiß) */
+  --hero-gradient-start: #dceaf5;
+  --hero-gradient-end: #f0f4fa;
+
   /* Rahmen & Fokus */
-  --border-subtle: #d4cfc4;
-  --ring-focus: #4a7c9b;
+  --border-subtle: #c5d4e0;
+  --ring-focus: #3d8fb8;
 
-  /* Therapie-Kacheln (Grid) */
-  --service-expressive: #5a7d5c;
-  --service-art: #a67c35;
-  --service-trauma: #4a6b8a;
-  --service-youth: #8b4545;
-  --service-supervision: #9e6b7a;
-  --service-misophonia: #3d8b87;
-  --service-cultural: #6b7d5a;
+  /* Therapie-Kacheln 3×2 (gesättigt, weißer Text) */
+  --service-expressive: #4a7c59;
+  --service-art: #b8862e;
+  --service-trauma: #3d6b94;
+  --service-youth: #9b4545;
+  --service-supervision: #8e5a72;
+  --service-misophonia: #2d8a85;
 
-  /* Shadcn-kompatible Basis (falls UI-Komponenten genutzt) */
-  --background: 40 20% 95%;
-  --foreground: 220 15% 20%;
+  /* Shadcn-kompatible Basis */
+  --background: 210 30% 97%;
+  --foreground: 210 25% 18%;
   --card: 0 0% 100%;
-  --card-foreground: 220 15% 20%;
-  --primary: 205 55% 28%;
+  --card-foreground: 210 25% 18%;
+  --primary: 205 68% 33%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 40 18% 90%;
-  --secondary-foreground: 220 15% 25%;
-  --muted: 40 15% 92%;
-  --muted-foreground: 220 10% 40%;
-  --accent: 12 48% 52%;
+  --secondary: 210 25% 93%;
+  --secondary-foreground: 210 20% 25%;
+  --muted: 210 20% 94%;
+  --muted-foreground: 210 12% 42%;
+  --accent: 172 58% 39%;
   --accent-foreground: 0 0% 100%;
-  --border: 40 12% 82%;
-  --input: 40 12% 82%;
-  --ring: 205 35% 45%;
+  --border: 210 22% 85%;
+  --input: 210 22% 85%;
+  --ring: 205 45% 48%;
   --radius: 0.75rem;
 }

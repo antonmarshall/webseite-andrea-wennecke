@@ -48,9 +48,7 @@ const TherapyServices = () => {
                   'group relative flex min-h-[140px] flex-col items-center justify-center rounded-xl p-6 text-center text-white shadow-md transition-all duration-300',
                   'hover:shadow-lg hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring-focus)] focus-visible:ring-offset-2',
                   isOpen &&
-                    'ring-2 ring-white ring-offset-2 ring-offset-surface brightness-110 shadow-lg',
-                  service.id === 'cultural' &&
-                    'lg:col-span-3 lg:max-w-md lg:mx-auto lg:w-full'
+                    'ring-2 ring-white ring-offset-2 ring-offset-surface brightness-110 shadow-lg'
                 )}
                 style={{ backgroundColor: `var(${service.colorVar})` }}
               >

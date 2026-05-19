@@ -86,6 +86,18 @@ const About = () => {
           </div>
           
           <div className="p-6 rounded-lg shadow-md bg-white/80 backdrop-blur-sm border border-[var(--border-subtle)]">
+            <h2 className="text-2xl font-semibold mb-4 text-brand-primary">
+              Kultursensible Psychotherapie
+            </h2>
+            <p className="text-gray-600">
+              In der therapeutischen Arbeit werden Lebensgeschichte, kulturelle
+              Pr{'\u00e4'}gungen und migrationssensible Erfahrungen mit einbezogen
+              {'\u2013'} ohne zu verallgemeinern. Vertrauen, gemeinsame Sprache und
+              der jeweilige soziale Kontext stehen im Mittelpunkt.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-lg shadow-md bg-white/80 backdrop-blur-sm border border-[var(--border-subtle)]">
             <h2 className="text-2xl font-semibold mb-4 text-brand-primary">Therapeutischer Ansatz</h2>
             <p className="text-gray-600">
               Als studierte Psychologin und erfahrene Therapeutin verbinde ich wissenschaftlich fundierte 

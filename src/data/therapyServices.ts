@@ -4,7 +4,6 @@ import {
   Heart,
   User,
   Users,
-  Globe,
   Ear,
   Sparkles,
 } from 'lucide-react';
@@ -15,8 +14,7 @@ export type TherapyServiceId =
   | 'trauma'
   | 'youth'
   | 'supervision'
-  | 'misophonia'
-  | 'cultural';
+  | 'misophonia';
 
 export type TherapyService = {
   id: TherapyServiceId;
@@ -39,7 +37,7 @@ export const therapyServices: TherapyService[] = [
 
 Durch diese methodische Vielfalt können Themen oft auf verschiedenen Ebenen bearbeitet werden: emotional, körperlich und symbolisch. So entstehen neue Perspektiven und Zugänge zu belastenden Erfahrungen, ohne dass Sie alles sofort in Worte fassen müssen.
 
-Die Therapie richtet sich an Erwachsene und Jugendliche, die in einem geschützten Rahmen an ihrer persönlichen Entwicklung arbeiten möchten. Im Erstgespräch klären wir gemeinsam, welche Methoden für Ihr Anliegen passend sind.
+Die Therapie richtet sich an Erwachsene und Jugendliche in einem geschützten Rahmen. Im Erstgespräch klären wir gemeinsam, welche Methoden für Ihr Anliegen passend sind.
 
 [Dieser Text ist ein Platzhalter und wird von Andrea Wennecke durch den endgültigen Fachtext ersetzt.]`,
   },
@@ -77,12 +75,12 @@ Die Begleitung richtet sich an Erwachsene und Jugendliche. Im Erstgespräch besp
     id: 'youth',
     title: 'Jugendliche',
     shortDescription:
-      'Altersgerechte therapeutische Begleitung für junge Menschen in schwierigen Lebensphasen.',
+      'Therapeutische Begleitung für Jugendliche – nicht für Kinder.',
     colorVar: '--service-youth',
     icon: User,
     detailText: `Jugendliche stehen oft vor Veränderungen, die Druck, Unsicherheit oder Überforderung auslösen können – in der Schule, in der Familie, im Freundeskreis oder mit sich selbst. In der therapeutischen Begleitung geht es darum, einen Raum zu schaffen, in dem junge Menschen ihre Themen ernst genommen fühlen und auf ihre Weise Ausdruck finden können.
 
-Je nach Alter und Persönlichkeit kommen Gespräche, kreative Methoden oder körperorientierte Übungen zum Einsatz. Wichtig ist ein respektvoller, nicht belehrender Umgang auf Augenhöhe.
+Je nach Persönlichkeit kommen Gespräche, kreative Methoden oder körperorientierte Übungen zum Einsatz. Wichtig ist ein respektvoller Umgang auf Augenhöhe. Das Angebot richtet sich ausdrücklich an Jugendliche – nicht an Kinder im Grundschulalter.
 
 Eltern oder Bezugspersonen können – nach Absprache mit dem Jugendlichen – in einzelnen Schritten einbezogen werden. Im Erstgespräch klären wir Anliegen, Rahmen und Vertraulichkeit.
 
@@ -115,21 +113,6 @@ Interessierte können sich für Termine, Formate und Konditionen direkt melden. 
 In der therapeutischen Begleitung geht es darum, Auslöser und Bewältigungsstrategien zu verstehen, Ressourcen zu stärken und Wege zu finden, den Alltag wieder besser zu bewältigen. Der Ansatz orientiert sich an Ihren individuellen Erfahrungen und Zielen.
 
 Ob und in welchem Rahmen eine Therapie sinnvoll ist, klären wir im Erstgespräch. Fachliche Details zu Methoden und Verlauf werden hier noch ergänzt.
-
-[Dieser Text ist ein Platzhalter und wird von Andrea Wennecke durch den endgültigen Fachtext ersetzt.]`,
-  },
-  {
-    id: 'cultural',
-    title: 'Kultursensible Psychotherapie',
-    shortDescription:
-      'Therapie mit Blick auf kulturelle Prägungen, Migration und Vielfalt von Lebenswegen.',
-    colorVar: '--service-cultural',
-    icon: Globe,
-    detailText: `Kultursensible Psychotherapie bedeutet, Ihre Lebensgeschichte, Ihre kulturellen und sozialen Prägungen sowie mögliche Migrationserfahrungen in den therapeutischen Blick zu nehmen – ohne zu verallgemeinern oder zu stereotypisieren.
-
-Andrea Wennecke bringt langjährige Erfahrung in der Arbeit mit Menschen unterschiedlicher Herkunft und Lebenswelten mit. Es geht darum, Vertrauen aufzubauen, Sprache und Symbolik gemeinsam zu finden und Belastungen im jeweiligen sozialen Kontext zu verstehen.
-
-Ob Identität, Zugehörigkeit, Diskriminierungserfahrungen oder der Spagat zwischen Kulturen – im geschützten Rahmen können Sie Themen ansprechen, die Ihnen wichtig sind. Im Erstgespräch klären wir, ob dieser Schwerpunkt für Ihr Anliegen passt.
 
 [Dieser Text ist ein Platzhalter und wird von Andrea Wennecke durch den endgültigen Fachtext ersetzt.]`,
   },

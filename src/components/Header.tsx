@@ -11,8 +11,7 @@ const menuItems: MenuItem[] = [
   { id: 'therapy', text: 'Angebote', type: 'scroll' },
   { id: 'prices', text: 'Preise', type: 'scroll' },
   { id: 'contact', text: 'Kontakt', type: 'scroll' },
-  { id: 'about', text: 'Über mich', type: 'route', path: '/about' },
-  { id: 'faq', text: 'FAQ', type: 'scroll' },
+  { id: 'about', text: '\u00dcber mich', type: 'route', path: '/about' },
 ];
 
 const Header = () => {
@@ -27,7 +26,7 @@ const Header = () => {
   useEffect(() => {
     if (!isHomePage) return;
 
-    const sections = ['home', 'therapy', 'prices', 'contact', 'directions', 'faq'];
+    const sections = ['home', 'therapy', 'prices', 'contact'];
     const handleScroll = () => {
       const current = sections.find((section) => {
         const element = document.getElementById(section);
@@ -45,11 +44,12 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage]);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setActiveSection(id);
   };
 
@@ -76,40 +76,46 @@ const Header = () => {
     return isHomePage && activeSection === item.id;
   };
 
+  const linkClass = (item: MenuItem) =>
+    `rounded-lg px-3 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring-focus)] ${
+      isActive(item)
+        ? 'text-brand-primary bg-brand-primary/10'
+        : 'text-[var(--text-secondary)] hover:text-brand-primary hover:bg-brand-primary/5'
+    }`;
+
   return (
-    <header className="sticky top-0 z-50 bg-surface-elevated/90 backdrop-blur-sm shadow-sm">
-      <div className="container mx-auto flex items-center justify-between rounded-b-xl bg-brand-primary px-4 py-4">
-        <div className="flex items-center">
+    <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-surface-elevated/95 backdrop-blur-md">
+      <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-3 md:px-6">
+        <div className="min-w-0 shrink">
           {isLegalPage ? (
             <button
+              type="button"
               onClick={() => navigate('/')}
-              className="flex items-center text-[var(--text-on-brand)] transition-colors hover:opacity-90"
+              className="flex items-center text-sm font-medium text-brand-primary transition hover:text-brand-primary-hover"
             >
-              <ArrowLeft size={20} className="mr-2" />
-              <span>Zurück</span>
+              <ArrowLeft size={18} className="mr-1.5 shrink-0" />
+              Zur{'\u00fc'}ck
             </button>
           ) : (
             <button
+              type="button"
               onClick={() =>
                 handleNavigation({ id: 'home', text: 'Start', type: 'scroll' })
               }
-              className="text-lg font-medium text-[var(--text-on-brand)] hover:opacity-90"
+              className="truncate text-base font-semibold text-brand-primary hover:text-brand-primary-hover md:text-lg"
             >
               Andrea Wennecke
             </button>
           )}
         </div>
 
-        <nav className="hidden md:flex gap-1">
+        <nav className="hidden items-center gap-0.5 md:flex" aria-label="Hauptnavigation">
           {menuItems.map((item) => (
             <button
               key={item.id}
+              type="button"
               onClick={() => handleNavigation(item)}
-              className={`rounded-2xl px-4 py-2 text-sm transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
-                isActive(item)
-                  ? 'bg-white/20 font-medium text-white'
-                  : 'text-white/90 hover:bg-white/10'
-              }`}
+              className={linkClass(item)}
             >
               {item.text}
             </button>
@@ -117,46 +123,45 @@ const Header = () => {
         </nav>
 
         <button
-          className="rounded-lg p-2 text-white transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 md:hidden"
+          type="button"
+          className="rounded-lg p-2 text-brand-primary transition hover:bg-brand-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring-focus)] md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
+          aria-expanded={isMenuOpen}
+          aria-label={isMenuOpen ? 'Men\u00fc schlie\u00dfen' : 'Men\u00fc \u00f6ffnen'}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      <div
-        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden ${
-          isMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
-        }`}
-        onClick={() => setIsMenuOpen(false)}
-        aria-hidden
-      />
-      <div
-        className={`fixed left-0 right-0 top-[72px] z-50 bg-surface-elevated shadow-lg transition-transform duration-300 md:hidden ${
-          isMenuOpen ? 'translate-y-0' : '-translate-y-full'
-        }`}
-      >
-        <nav className="container mx-auto flex flex-col gap-1 px-4 py-4">
-          {menuItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavigation(item)}
-              className={`rounded-2xl p-3 text-left transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/30 ${
-                isActive(item)
-                  ? 'bg-brand-primary font-medium text-white'
-                  : 'text-brand-primary hover:bg-brand-primary/10'
-              }`}
-            >
-              {item.text}
-            </button>
-          ))}
-        </nav>
-      </div>
+      {isMenuOpen && (
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-40 bg-black/40 md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Men\u00fc schlie\u00dfen"
+          />
+          <nav
+            className="absolute left-0 right-0 top-full z-50 border-b border-[var(--border-subtle)] bg-surface-elevated px-4 py-3 shadow-lg md:hidden"
+            aria-label="Mobile Navigation"
+          >
+            <div className="flex flex-col gap-1">
+              {menuItems.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => handleNavigation(item)}
+                  className={`${linkClass(item)} w-full text-left`}
+                >
+                  {item.text}
+                </button>
+              ))}
+            </div>
+          </nav>
+        </>
+      )}
     </header>
   );
 };
 
 export default Header;
-
-

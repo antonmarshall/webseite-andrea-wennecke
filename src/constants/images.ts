@@ -1,6 +1,6 @@
 const base = import.meta.env.BASE_URL;
 
-/** Praxisraum mit Sitzbereich – Hero */
+/** Praxisraum – Hero */
 export const HERO_IMAGE = `${base}images/hero-praxis.jpeg`;
 
 /** Porträt Andrea Wennecke */
